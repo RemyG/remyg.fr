@@ -1,0 +1,155 @@
+/* Custom container */
+.container-narrow {
+  margin: 0 auto;
+  max-width: 700px; }
+
+.container-narrow > hr {
+  margin: 30px 0; }
+
+.navbar .nav {
+  float: right; }
+
+/* posts index */
+.post > h3.title {
+  position: relative;
+  padding-top: 10px; }
+
+.post > h3.title span.date {
+  position: absolute;
+  right: 0;
+  font-size: 0.9em; }
+
+.post > .more {
+  margin: 10px 0;
+  text-align: left; }
+
+/* post-full*/
+.post-full .date {
+  margin-bottom: 20px;
+  font-weight: bold; }
+
+/* tag_box */
+.tag_box {
+  list-style: none;
+  margin: 0;
+  overflow: hidden; }
+
+.tag_box li {
+  line-height: 28px; }
+
+.tag_box li i {
+  opacity: 0.9; }
+
+.tag_box.inline li {
+  float: left; }
+
+.tag_box a {
+  padding: 3px 6px;
+  margin: 2px;
+  background: #eee;
+  color: #555;
+  border-radius: 3px;
+  text-decoration: none;
+  border: 1px dashed #cccccc; }
+
+.tag_box a span {
+  vertical-align: super;
+  font-size: 0.8em; }
+
+.tag_box a:hover {
+  background-color: #e5e5e5; }
+
+.tag_box a.active {
+  background: #57A957;
+  border: 1px solid #4c964d;
+  color: #FFF; }
+
+header.project-downloads {
+  padding-top: 1em;
+}
+
+header.project-downloads ul {
+  list-style:none;
+  height:40px;
+  padding:0;
+  background: #eee;
+  background: -moz-linear-gradient(top, #f8f8f8 0%, #dddddd 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(100%,#dddddd));
+  background: -webkit-linear-gradient(top, #f8f8f8 0%,#dddddd 100%);
+  background: -o-linear-gradient(top, #f8f8f8 0%,#dddddd 100%);
+  background: -ms-linear-gradient(top, #f8f8f8 0%,#dddddd 100%);
+  background: linear-gradient(top, #f8f8f8 0%,#dddddd 100%);
+  border-radius:5px;
+  border:1px solid #d2d2d2;
+  box-shadow:inset #fff 0 1px 0, inset rgba(0,0,0,0.03) 0 -1px 0;
+  width:270px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header.project-downloads li {
+  width:89px;
+  float:left;
+  border-right:1px solid #d2d2d2;
+  height:40px;
+}
+
+header.project-downloads ul a {
+  line-height:1;
+  font-size:11px;
+  display:block;
+  text-align:center;
+  padding-top:6px;
+  height:40px;
+}
+
+header.project-downloads strong {
+  color:#222;
+  font-weight:700;
+}
+
+header.project-downloads ul li + li {
+  width:88px;
+  border-left:1px solid #fff;
+}
+
+header.project-downloads ul li + li + li {
+  border-right:none;
+  width:89px;
+}
+
+header.project-downloads ul a strong {
+  font-size:14px;
+  display:block;
+  color:#222;
+}
+
+header.project-downloads li a {
+  text-decoration: none;
+}
+
+div.navbar div.navbar-inner {
+  border: none;
+  border-bottom: 1px solid #d4d4d4;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  background-image: -moz-linear-gradient(top, rgb(65, 65, 65), rgb(50, 50, 50));
+  background-image: -webkit-linear-gradient(top, rgb(65, 65, 65), rgb(50, 50, 50));
+  background-image: -o-linear-gradient(top, rgb(65, 65, 65), rgb(50, 50, 50));
+  background-image: linear-gradient(top, rgb(65, 65, 65), rgb(50, 50, 50));
+
+}
+
+div.navbar div.navbar-inner a {
+    color: #fff;
+    text-shadow: none;
+}
+
+div.navbar div.navbar-inner a:hover {
+  color: #fff;
+  background-image: -moz-linear-gradient(top, rgb(80, 80, 80), rgb(65, 65, 65));
+  background-image: -webkit-linear-gradient(top, rgb(80, 80, 80), rgb(65, 65, 65));
+  background-image: -o-linear-gradient(top, rgb(80, 80, 80), rgb(65, 65, 65));
+  background-image: linear-gradient(top, rgb(80, 80, 80), rgb(65, 65, 65));
+}

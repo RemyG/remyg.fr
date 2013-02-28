@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PHP Scripts</title>
+    <meta name="description" content="Misc. PHP scripts">
+    <meta name="author" content="Rémy Gardette">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-narrow">
+          <a class="brand" href="/">Rémy Gardette</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/pages.html">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/resume.html">My resume</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/projects/index.html">My projects</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>PHP Scripts </h1>
+</div>
+
+<div class="row-fluid">
+  <div class="span12">
+    <header class='project-downloads'>
+  <ul>
+    <li><a href='https://github.com/RemyG/PHPScripts/zipball/master'>Download <strong>ZIP File</strong></a></li>
+    <li><a href='https://github.com/RemyG/PHPScripts/tarball/master'>Download <strong>TAR Ball</strong></a></li>
+    <li><a href='https://github.com/RemyG/PHPScripts'>View On <strong>GitHub</strong></a></li>
+  </ul>
+</header>
+<p>This project regroups several PHP scripts that I&#8217;ve written for my personal use. In case somebody wants to use them, I&#8217;ve put them on GitHub, under an MIT license.</p>
+
+<h2 id='download'>Download</h2>
+
+<p>You can download the latest version of PHPScripts in either <a href='https://github.com/RemyG/PHPScripts/zipball/master'>zip</a> or <a href='https://github.com/RemyG/PHPScripts/tarball/master'>tar</a> formats.</p>
+
+<p>You can also clone the project with Git by running:</p>
+
+<pre><code>$ git clone https://github.com/RemyG/PHPScripts.git</code></pre>
+
+<p>The different scripts present in this project are:</p>
+
+<ul>
+<li><a href='#linkedinscraper'>LinkedInScraper</a> - Scrape a resume from LinkedIn.</li>
+
+<li><a href='#mysqlbackup'>MySqlBackup</a> - Backup a whole MySql database</li>
+</ul>
+
+<h2 id='linkedinscraper'><a id='linkedinscraper'> </a>LinkedInScraper</h2>
+
+<p>This script is used to scrape a resume from LinkedIn, and create an XML file with the results.</p>
+
+<h3 id='requirements'>Requirements</h3>
+
+<p>This script is composed of 2 files:</p>
+
+<ul>
+<li><code>linkedinscraper/linkedin.php</code> - contains the script</li>
+
+<li><code>linkedinscraper/libs/simple_html_dom.php</code> - a PHP HTML parser (<a href='http://sourceforge.net/projects/simplehtmldom/'>external library</a>)</li>
+</ul>
+
+<h3 id='functionment'>Functionment</h3>
+
+<p>To scrape a resume from LinkedIn, you just need to call the method <code>scrapeResume($resume_url, $dest_file)</code>, which will create or replace the file <code>$dest_file</code> with the XML scraping of the resume at <code>$resume_xml</code>.</p>
+
+<p>The resulting XML file will have the format:</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;resume&gt;
+  &lt;position&gt;
+    &lt;title&gt;position title&lt;/title&gt;
+    &lt;company&gt;company&lt;/company&gt;
+    &lt;location&gt;location&lt;/location&gt;
+    &lt;from&gt;from date&lt;/from&gt;
+    &lt;to&gt;to date&lt;/to&gt;
+    &lt;description&gt;description&lt;/description&gt;
+  &lt;/position&gt;
+  &lt;position&gt;
+  ...
+  &lt;/position&gt;
+&lt;/resume&gt;</code></pre>
+
+<h2 id='mysqlbackup'><a id='mysqlbackup'> </a>MySqlBackup</h2>
+
+<p>This script is used to back up a MySql database (or just a table).</p>
+
+<h3 id='functionnement'>Functionnement</h3>
+
+<p>The script in ran by calling the function <code>backup_tables($hostname, $username, $password, $dbname, $table = &#39;*&#39;)</code>. If you ommit the last parameter, the whole database will be backed up.</p>
+
+<p>The back up is saved in a temporary file <code>db-backup-YYYYMMDD-HHmmss.sql</code> and then compressed in a file <code>db-backup-YYYYMMDD-HHmmss.tar.gz</code>.</p>
+
+<h2 id='author_and_license'>Author and license</h2>
+
+<p>Released under the MIT License by <a href='http://remyg.fr/en'>Remy Gardette</a>.</p>
+  </div>
+</div>
+
+
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; 2013 Rémy Gardette
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
+

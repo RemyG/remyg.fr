@@ -4,13 +4,110 @@
  <title>Rémy Gardette</title>
  <link href="http://username.github.com/" rel="self"/>
  <link href="http://username.github.com"/>
- <updated>2013-02-28T17:00:47+00:00</updated>
+ <updated>2013-03-01T16:41:03+00:00</updated>
  <id>http://username.github.com</id>
  <author>
    <name>Rémy Gardette</name>
    <email>remy.gardette@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>RGResponsive</title>
+   <link href="http://username.github.com/Web/2013/01/23/rgresponsive-a-responsive-wordpress-theme"/>
+   <updated>2013-01-23T18:00:00+00:00</updated>
+   <id>http://username.github.com/Web/2013/01/23/rgresponsive-a-responsive-wordpress-theme</id>
+   <content type="html">&lt;p&gt;I&amp;#8217;ve decided to create my own Wordpress theme, RGResponsive.&lt;/p&gt;
+
+&lt;p&gt;You can find the sources for this theme &lt;a href='https://github.com/RemyG/wordpress-rgresponsive'&gt;on GitHub&lt;/a&gt;, and see it in action &lt;a href='http://blog.remyg.fr'&gt;on my blog&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can follow the development and post comments &lt;a href='/projects/rgresponsive/'&gt;on this page&lt;/a&gt;.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>PFP</title>
+   <link href="http://username.github.com/2013/01/15/pfp-a-tiny-php-application-framework"/>
+   <updated>2013-01-15T18:00:00+00:00</updated>
+   <id>http://username.github.com/2013/01/15/pfp-a-tiny-php-application-framework</id>
+   <content type="html">&lt;p&gt;In my free time, I often work on small personal PHP projects. This allows me to keep in touch with the new technologies, frameworks,&amp;#8230; For instance, I&amp;#8217;ve recently started using Bootstrap to create well presented web-applications.&lt;/p&gt;
+
+&lt;p&gt;My issue was that, each time I started a new project, I had to re-create the skeleton for the application. This basically meant copying an old project, remove everything specific, clean all the configuration values,&amp;#8230; before I could start working. That&amp;#8217;s why I decided to create an independant project, which I could use as a skeleton for almost all my PHP applications.&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;But while looking at several existing solutions (Zend, CakePHP, FuelPHP,&amp;#8230;), I&amp;#8217;ve decided that these frameworks were way too heavy and complicated for my needs. I only needed a basic MVC skeleton. Then I found &lt;a href='http://gilbitron.github.com/PIP/'&gt;PIP&lt;/a&gt;, which is a tiny, lightweight MVC framework for LAMP stacks.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;ve forked the project as &lt;a href='https://github.com/RemyG/PFP'&gt;PFP&lt;/a&gt;, so I could alter it to match my needs. The main modification I&amp;#8217;ve made so far are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;converting all global variables to constants&lt;/li&gt;
+
+&lt;li&gt;using PDO instead of the mysql functions&lt;/li&gt;
+
+&lt;li&gt;creating a global header and footer for the whole application&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With these modifications, I&amp;#8217;ve got my generic application skeleton, that I can use for all my PHP website developments.&lt;/p&gt;
+
+&lt;p&gt;You can find all the information about this project on &lt;a href='/projects/pfp'&gt;this page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This project is released on GitHub &lt;a href='https://github.com/RemyG/PFP'&gt;here&lt;/a&gt; under an MIT license.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Custom PHP Scripts</title>
+   <link href="http://username.github.com/2012/12/27/custom-php-scripts-linkedin-resume"/>
+   <updated>2012-12-27T18:00:00+00:00</updated>
+   <id>http://username.github.com/2012/12/27/custom-php-scripts-linkedin-resume</id>
+   <content type="html">&lt;p&gt;Some time ago, I’ve decided to centralize my resume information in one place, to avoid having to update it on several places every time I changed anything in it.&lt;br /&gt;I’ve decided to use the LinkedIn interface to update it, as it allows resumes in different languages (my profile &lt;a href='http://www.linkedin.com/in/remygardette/fr'&gt;in French&lt;/a&gt; and &lt;a href='http://www.linkedin.com/in/remygardette/en'&gt;in English&lt;/a&gt;).&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;To retrieve my resume information from my LinkedIn profile, I’ve created a PHP script to scrape the webpage and compile the result in an XML file.&lt;/p&gt;
+
+&lt;p&gt;The resulting file has the following format:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;resume&amp;gt;
+    &amp;lt;position&amp;gt;
+	&amp;lt;title&amp;gt;position title&amp;lt;/title&amp;gt;
+	&amp;lt;company&amp;gt;company&amp;lt;/company&amp;gt;
+	&amp;lt;location&amp;gt;location&amp;lt;/location&amp;gt;
+	&amp;lt;from&amp;gt;from date&amp;lt;/from&amp;gt;
+	&amp;lt;to&amp;gt;to date&amp;lt;/to&amp;gt;
+	&amp;lt;description&amp;gt;description&amp;lt;/description&amp;gt;
+    &amp;lt;/position&amp;gt;
+    &amp;lt;position&amp;gt;
+	...
+    &amp;lt;/position&amp;gt;
+&amp;lt;/resume&amp;gt;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Then I can use this file as a source data in other webpages (like &lt;a href='http://remyg.fr/en'&gt;my personal homepage&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;This script uses the &lt;a href='http://sourceforge.net/projects/simplehtmldom/'&gt;Simple HTML DOM library&lt;/a&gt; to parse the HTML source from the webpage.&lt;/p&gt;
+
+&lt;p&gt;The script is in the &lt;code&gt;linkedin.php file&lt;/code&gt;, and needs the library in &lt;code&gt;simple_html_dom.php&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;To run it, just call &lt;code&gt;scrapeResume($resume_url, $dest_file)&lt;/code&gt;, which will create or replace the file &lt;code&gt;$dest_file&lt;/code&gt; with the XML scraping of the resume at &lt;code&gt;$resume_xml&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now I could create a custom and lightweight XML marshaller and unmarshaller, to simplify the XML operations.&lt;/p&gt;
+
+&lt;p&gt;The sources can be found &lt;a href='https://github.com/RemyG/PHPScripts'&gt;on GitHub&lt;/a&gt;, and you can directly download the sources as a &lt;a href='https://github.com/RemyG/PHPScripts/zipball/master'&gt;Zip File&lt;/a&gt; or a &lt;a href='https://github.com/RemyG/PHPScripts/tarball/master'&gt;TAR Ball&lt;/a&gt;. You can also simply clone the repository with Git by running:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+$ git clone https://github.com/RemyG/PHPScripts.git
+&lt;/code&gt;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>New Blog With Octopress</title>
+   <link href="http://username.github.com/2012/12/21/new-blog-with-octopress"/>
+   <updated>2012-12-21T18:00:00+00:00</updated>
+   <id>http://username.github.com/2012/12/21/new-blog-with-octopress</id>
+   <content type="html">&lt;p&gt;Welcome on my new blog everybody!&lt;br /&gt;I’ve started it to present my current developments, which I release on GitHub as open-source projects.&lt;br /&gt;You can find my GitHub profile &lt;a href='https://github.com/RemyG'&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is an &lt;a href='http://www.octopress.org/'&gt;Octopress&lt;/a&gt; blog, deployed as a GitHub page.&lt;/p&gt;
+
+&lt;p&gt;More news to come soon!&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Jekyll Introduction</title>
@@ -28,7 +125,7 @@
 &lt;h3 id='examples'&gt;Examples&lt;/h3&gt;
 
 &lt;p&gt;This website is created with Jekyll. &lt;a href='https://github.com/mojombo/jekyll/wiki/Sites'&gt;Other Jekyll websites&lt;/a&gt;.&lt;/p&gt;
-
+&lt;!--more--&gt;
 &lt;h3 id='what_does_jekyll_do'&gt;What does Jekyll Do?&lt;/h3&gt;
 
 &lt;p&gt;Jekyll is a ruby gem you install on your local system. Once there you can call &lt;code&gt;jekyll --server&lt;/code&gt; on a directory and provided that directory is setup in a way jekyll expects, it will do magic stuff like parse markdown/textile files, compute categories, tags, permalinks, and construct your pages from layout templates and partials.&lt;/p&gt;

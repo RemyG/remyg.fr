@@ -1,9 +1,12 @@
 ---
 layout: page
-title: "My resume"
+title: "Resume"
 description: ""
 group: navigation
+weight: 3
 ---
+{% include JB/setup %}
+
 ## My professional experience
 
 <table class="table professional">
@@ -31,10 +34,3 @@ group: navigation
 	</tr>
 </table>
 
-## Skills
-
-<table class="table professional">
-
-{% include skills_en.html %}
-
-</table>

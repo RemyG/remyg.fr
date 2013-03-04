@@ -34,6 +34,18 @@
     <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
     <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
 
+    
+
+  <script type="text/javascript">
+  (function() {
+  var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+  s.type = 'text/javascript';
+  s.async = true;
+  s.src = '//api.flattr.com/js/0.6/load.js?mode=auto&button=compact&uid=ramy&category=text';
+  t.parentNode.insertBefore(s, t);
+  })();
+  </script>
+
   </head>
 
   <body>
@@ -42,12 +54,15 @@
         <div class="container">
           <a class="brand" href="/">Rémy Gardette</a>
           <ul class="nav">
+            <li><a href="http://blog.remyg.fr">Blog</a></li>
             
             
             
 
 
   
+    
+      
     
       
     
@@ -91,9 +106,9 @@
     
       
     
-      
-    
   
+    
+      
     
       
     
@@ -137,9 +152,9 @@
     
       
     
-      
-    
   
+    
+      
     
       
     
@@ -157,8 +172,6 @@
           	
           
         
-      
-    
       
     
       
@@ -486,6 +499,15 @@
 
 <div class="row-fluid">
   <div class="span12">
+    <a class="FlattrButton" 
+      href="http://remyg.fr/projects/pfp/index.html" 
+      title="PFP" 
+      rel="flattr;tags:blog;"></a>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <div class="span12">
     <header class='project-downloads'>
 	<ul>
 		<li><a href='https://github.com/RemyG/PFP/zipball/master'>Download <strong>ZIP File</strong></a></li>
@@ -534,45 +556,29 @@
 <p>PFP is based on the Model-View-Controller development pattern. MVC is a software approach that separates application logic from presentation. In practice, it permits your web pages to contain minimal scripting since the presentation is separate from the PHP scripting.</p>
 
 <ul>
-<li>
-<p><strong>The Model</strong> represents your data structures. Typically your model classes will contain functions that help you retrieve, insert, and update information in your database.</p>
-</li>
+<li><strong>The Model</strong> represents your data structures. Typically your model classes will contain functions that help you retrieve, insert, and update information in your database.</li>
 
-<li>
-<p><strong>The View</strong> is the information that is being presented to a user. A View will normally be a web page, but can be any type of &#8220;page&#8221;.</p>
-</li>
+<li><strong>The View</strong> is the information that is being presented to a user. A View will normally be a web page, but can be any type of &#8220;page&#8221;.</li>
 
-<li>
-<p><strong>The Controller</strong> serves as an intermediary between the Model, the View, and any other resources needed to process the HTTP request and generate a web page.</p>
+<li><strong>The Controller</strong> serves as an intermediary between the Model, the View, and any other resources needed to process the HTTP request and generate a web page.</li>
+</ul>
 
 <h3 id='folder_structure'>Folder Structure</h3>
 
 <p>With MVC in mind the physical layout of PFP is fairly simple. Your application specific files go in the &#8220;application&#8221; folder (you don&#8217;t need to touch the system folder). Inside the application folder there are folders for all of the specific application entities:</p>
-</li>
 
-<li>
-<p>config</p>
-</li>
+<ul>
+<li>config</li>
 
-<li>
-<p>controllers</p>
-</li>
+<li>controllers</li>
 
-<li>
-<p>helpers</p>
-</li>
+<li>helpers</li>
 
-<li>
-<p>models</p>
-</li>
+<li>models</li>
 
-<li>
-<p>plugins</p>
-</li>
+<li>plugins</li>
 
-<li>
-<p>views</p>
-</li>
+<li>views</li>
 </ul>
 
 <p>When PFP loads files it assumes they are in the corresponding folders. So make sure you place your files in the correct folders.</p>
@@ -794,6 +800,18 @@ define(&#39;DB_PASSWORD&#39;, &#39;&#39;); // Database password</code></pre>
 <li><strong>Plugins</strong> are literally any PHP files and can provide any functionality you want. By loading a plugin you are simply including the PHP file from the &#8220;plugins&#8221; folder. This can be useful if you want to use third party libraries in your PFP application.</li>
 </ul>
 
+<h2 id='license'>License</h2>
+
+<p>This theme is released under the MIT License:</p>
+
+<p>Copyright (c) 2013 Rémy Gardette</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &#8220;Software&#8221;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED &#8220;AS IS&#8221;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
 <h2 id='changelog'>Changelog</h2>
 
 <p><strong>v0.1</strong> - Initial fork:</p>
@@ -805,9 +823,6 @@ define(&#39;DB_PASSWORD&#39;, &#39;&#39;); // Database password</code></pre>
 
 <li>Implemented use of the PDO extension.</li>
 </ul>
-<footer>
-  Released under the MIT license by <a href='http://remyg.fr/'>Remy Gardette</a>
-</footer>
   </div>
 </div>
 

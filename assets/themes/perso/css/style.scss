@@ -35,10 +35,12 @@
 .tag_box {
   list-style: none;
   margin: 0;
-  overflow: hidden; }
+  overflow: hidden; 
+  display: inline-block;
+  /*float: left;*/}
 
 .tag_box li {
-  line-height: 28px; }
+  /*line-height: 28px; */}
 
 .tag_box li i {
   opacity: 0.9; }
@@ -47,13 +49,13 @@
   float: left; }
 
 .tag_box a {
-  padding: 3px 6px;
+  /*padding: 3px 6px;
   margin: 2px;
   background: #eee;
   color: #555;
   border-radius: 3px;
   text-decoration: none;
-  border: 1px dashed #cccccc; }
+  border: 1px dashed #cccccc; */}
 
 .tag_box a span {
   vertical-align: super;
@@ -80,6 +82,7 @@ body {
 
 header.project-downloads {
   padding-top: 1em;
+  padding-bottom: 1.5em;
   ul {
     list-style:none;
     height:40px;
@@ -161,10 +164,13 @@ div.navbar {
 
 div.content {
   h1 {
-    font-size: 2.5em;
+    font-size: 2em;
   }
   h2 {
-    font-size: 1.8em;
+    font-size: 1.7em;
+  }
+  h3 {
+    font-size: 1.4em;
   }
 }
 
@@ -201,16 +207,16 @@ button.zocial {
 div.project {  
   margin-bottom: 15px;
   padding-bottom: 15px;
-  border-bottom: 1px solid #ccc;
+  /*border-bottom: 1px solid #ccc;*/
+  /*border: 2px solid #666;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;*/
+  padding: 10px;
   &:last-child {
-    border-bottom: none;
+    /*border-bottom: none;*/
   }
-  header {
-    border: 2px solid #666;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    padding: 10px;
+  header {    
     h1 {
       font-size: 1.5em;
       line-height: 1.5em;
@@ -250,6 +256,9 @@ article.post {
       h1 {
         font-size: 2em;
       }
+    }
+    .valign-middle {
+      vertical-align: middle;
     }
   }
   p.more {

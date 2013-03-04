@@ -32,10 +32,12 @@
 .tag_box {
   list-style: none;
   margin: 0;
-  overflow: hidden; }
+  overflow: hidden;
+  display: inline-block;
+  /*float: left;*/ }
 
 .tag_box li {
-  line-height: 28px; }
+  /*line-height: 28px; */ }
 
 .tag_box li i {
   opacity: 0.9; }
@@ -44,13 +46,13 @@
   float: left; }
 
 .tag_box a {
-  padding: 3px 6px;
+  /*padding: 3px 6px;
   margin: 2px;
   background: #eee;
   color: #555;
   border-radius: 3px;
   text-decoration: none;
-  border: 1px dashed #cccccc; }
+  border: 1px dashed #cccccc; */ }
 
 .tag_box a span {
   vertical-align: super;
@@ -74,7 +76,8 @@ body {
       padding-top: 0; } }
 
 header.project-downloads {
-  padding-top: 1em; }
+  padding-top: 1em;
+  padding-bottom: 1.5em; }
   header.project-downloads ul {
     list-style: none;
     height: 40px;
@@ -139,9 +142,11 @@ div.navbar div.navbar-inner {
     background-image: linear-gradient(top, #505050, #414141); }
 
 div.content h1 {
-  font-size: 2.5em; }
+  font-size: 2em; }
 div.content h2 {
-  font-size: 1.8em; }
+  font-size: 1.7em; }
+div.content h3 {
+  font-size: 1.4em; }
 
 footer {
   text-align: center; }
@@ -170,19 +175,18 @@ button.zocial {
 div.project {
   margin-bottom: 15px;
   padding-bottom: 15px;
-  border-bottom: 1px solid #cccccc; }
+  /*border-bottom: 1px solid #ccc;*/
+  /*border: 2px solid #666;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;*/
+  padding: 10px; }
   div.project:last-child {
-    border-bottom: none; }
-  div.project header {
-    border: 2px solid #666666;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    padding: 10px; }
-    div.project header h1 {
-      font-size: 1.5em;
-      line-height: 1.5em;
-      margin: 0; }
+    /*border-bottom: none;*/ }
+  div.project header h1 {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    margin: 0; }
 
 table.professional th, table.professional td, table.education th, table.education td {
   padding-top: 15px;
@@ -195,6 +199,8 @@ table.professional div.position-header {
 
 article.post header div.post-title h1 {
   font-size: 2em; }
+article.post header .valign-middle {
+  vertical-align: middle; }
 article.post p.more {
   margin: 20px 0; }
   article.post p.more a {

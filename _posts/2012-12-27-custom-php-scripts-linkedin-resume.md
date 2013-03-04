@@ -3,7 +3,7 @@ layout: post
 title: "Custom PHP Scripts"
 tagline: "LinkedIn Resume"
 date: 2012-12-27 18:00
-comments: true
+comments: false
 external-url: 
 tags: [PHP, XML, Script] 
 categories: 
@@ -16,22 +16,21 @@ To retrieve my resume information from my LinkedIn profile, I’ve created a PHP
 
 The resulting file has the following format:
 
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<resume>
-    <position>
-	<title>position title</title>
-	<company>company</company>
-	<location>location</location>
-	<from>from date</from>
-	<to>to date</to>
-	<description>description</description>
-    </position>
-    <position>
-	...
-    </position>
-</resume>
-```
+	<?xml version="1.0" encoding="UTF-8"?>
+	<resume>
+	    <position>
+		<title>position title</title>
+		<company>company</company>
+		<location>location</location>
+		<from>from date</from>
+		<to>to date</to>
+		<description>description</description>
+	    </position>
+	    <position>
+		...
+	    </position>
+	</resume>
+
 
 Then I can use this file as a source data in other webpages (like [my personal homepage](http://remyg.fr/en)).
 
@@ -45,8 +44,4 @@ Now I could create a custom and lightweight XML marshaller and unmarshaller, to 
 
 The sources can be found [on GitHub](https://github.com/RemyG/PHPScripts), and you can directly download the sources as a [Zip File](https://github.com/RemyG/PHPScripts/zipball/master) or a [TAR Ball](https://github.com/RemyG/PHPScripts/tarball/master). You can also simply clone the repository with Git by running:
 
-```
-$ git clone https://github.com/RemyG/PHPScripts.git
-```
-
-
+	$ git clone https://github.com/RemyG/PHPScripts.git

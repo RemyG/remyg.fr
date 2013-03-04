@@ -34,6 +34,18 @@
     <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
     <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
 
+    
+
+  <script type="text/javascript">
+  (function() {
+  var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+  s.type = 'text/javascript';
+  s.async = true;
+  s.src = '//api.flattr.com/js/0.6/load.js?mode=auto&button=compact&uid=ramy&category=text';
+  t.parentNode.insertBefore(s, t);
+  })();
+  </script>
+
   </head>
 
   <body>
@@ -42,12 +54,15 @@
         <div class="container">
           <a class="brand" href="/">Rémy Gardette</a>
           <ul class="nav">
+            <li><a href="http://blog.remyg.fr">Blog</a></li>
             
             
             
 
 
   
+    
+      
     
       
     
@@ -91,9 +106,9 @@
     
       
     
-      
-    
   
+    
+      
     
       
     
@@ -137,9 +152,9 @@
     
       
     
-      
-    
   
+    
+      
     
       
     
@@ -157,8 +172,6 @@
           	
           
         
-      
-    
       
     
       
@@ -496,8 +509,7 @@
 
 <p>The resulting file has the following format:</p>
 
-<p><code>
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;resume&gt;
     &lt;position&gt;
 	&lt;title&gt;position title&lt;/title&gt;
@@ -510,8 +522,7 @@
     &lt;position&gt;
 	...
     &lt;/position&gt;
-&lt;/resume&gt;
-</code></p>
+&lt;/resume&gt;</code></pre>
 
 <p>Then I can use this file as a source data in other webpages (like <a href='http://remyg.fr/en'>my personal homepage</a>).</p>
 
@@ -525,10 +536,13 @@
 
 <p>The sources can be found <a href='https://github.com/RemyG/PHPScripts'>on GitHub</a>, and you can directly download the sources as a <a href='https://github.com/RemyG/PHPScripts/zipball/master'>Zip File</a> or a <a href='https://github.com/RemyG/PHPScripts/tarball/master'>TAR Ball</a>. You can also simply clone the repository with Git by running:</p>
 
-<p><code>
-$ git clone https://github.com/RemyG/PHPScripts.git
-</code></p>
+<pre><code>$ git clone https://github.com/RemyG/PHPScripts.git</code></pre>
     </div>
+
+    <a class="FlattrButton" 
+      href="http://remyg.fr/2012/12/27/custom-php-scripts-linkedin-resume" 
+      title="Custom PHP Scripts" 
+      rel="flattr;tags:blog;"></a>
 
     
 
@@ -568,26 +582,6 @@ $ git clone https://github.com/RemyG/PHPScripts.git
     </div>
     <hr>
     
-
-
-  <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_developer = 1;
-    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
-    
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-
-
   </div>
 </div>
 

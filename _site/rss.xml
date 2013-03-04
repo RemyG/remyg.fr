@@ -5,8 +5,8 @@
         <description>Rémy Gardette - Rémy Gardette</description>
         <link>http://username.github.com</link>
         <link>http://username.github.com</link>
-        <lastBuildDate>2013-03-01T16:41:03+00:00</lastBuildDate>
-        <pubDate>2013-03-01T16:41:03+00:00</pubDate>
+        <lastBuildDate>2013-03-04T15:48:35+00:00</lastBuildDate>
+        <pubDate>2013-03-04T15:48:35+00:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -58,8 +58,7 @@
 
 &lt;p&gt;The resulting file has the following format:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;
-&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
 &amp;lt;resume&amp;gt;
     &amp;lt;position&amp;gt;
 	&amp;lt;title&amp;gt;position title&amp;lt;/title&amp;gt;
@@ -72,8 +71,7 @@
     &amp;lt;position&amp;gt;
 	...
     &amp;lt;/position&amp;gt;
-&amp;lt;/resume&amp;gt;
-&lt;/code&gt;&lt;/p&gt;
+&amp;lt;/resume&amp;gt;&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Then I can use this file as a source data in other webpages (like &lt;a href='http://remyg.fr/en'&gt;my personal homepage&lt;/a&gt;).&lt;/p&gt;
 
@@ -87,9 +85,7 @@
 
 &lt;p&gt;The sources can be found &lt;a href='https://github.com/RemyG/PHPScripts'&gt;on GitHub&lt;/a&gt;, and you can directly download the sources as a &lt;a href='https://github.com/RemyG/PHPScripts/zipball/master'&gt;Zip File&lt;/a&gt; or a &lt;a href='https://github.com/RemyG/PHPScripts/tarball/master'&gt;TAR Ball&lt;/a&gt;. You can also simply clone the repository with Git by running:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;
-$ git clone https://github.com/RemyG/PHPScripts.git
-&lt;/code&gt;&lt;/p&gt;</description>
+&lt;pre&gt;&lt;code&gt;$ git clone https://github.com/RemyG/PHPScripts.git&lt;/code&gt;&lt;/pre&gt;</description>
                 <link>http://username.github.com/2012/12/27/custom-php-scripts-linkedin-resume</link>
                 <guid>http://username.github.com/2012/12/27/custom-php-scripts-linkedin-resume</guid>
                 <pubDate>2012-12-27T18:00:00+00:00</pubDate>

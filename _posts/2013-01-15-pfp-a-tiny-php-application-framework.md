@@ -3,7 +3,7 @@ layout: post
 title: "PFP"
 tagline: "A tiny PHP application framework"
 date: 2013-01-15 18:00
-comments: true
+comments: false
 external-url:
 tags: [PHP, Framework, PDO] 
 categories: 

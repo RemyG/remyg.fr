@@ -49,7 +49,7 @@ PFP is based on the Model-View-Controller development pattern. MVC is a software
 * **The Model** represents your data structures. Typically your model classes will contain functions that help you retrieve, insert, and update information in your database.
 * **The View** is the information that is being presented to a user. A View will normally be a web page, but can be any type of "page".
 * **The Controller** serves as an intermediary between the Model, the View, and any other resources needed to process the HTTP request and generate a web page.
-        
+
 ### Folder Structure
     
 With MVC in mind the physical layout of PFP is fairly simple. Your application specific files go in the "application" folder (you don't need to touch the system folder). Inside the application folder there are folders for all of the specific application entities:
@@ -256,14 +256,22 @@ There are two types of additional resources you can use in PFP.
 * **Helpers** are classes which you can use that don't fall under the category of "controllers". These will usually be classes that provide extra functionality that you can use in your controllers. PFP ships with two helper classes (`Session_helper` and `Url_helper`) which are examples of how to use helpers.
 * **Plugins** are literally any PHP files and can provide any functionality you want. By loading a plugin you are simply including the PHP file from the "plugins" folder. This can be useful if you want to use third party libraries in your PFP application.
 
+## License
+
+This theme is released under the MIT License:
+
+Copyright (c) 2013 Rémy Gardette
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 ## Changelog
 
 **v0.1** - Initial fork:
 
 * Forked from [https://github.com/gilbitron/PIP/](https://github.com/gilbitron/PIP/), version 0.5.3
 * Replaced `global` variables by constants.
-* Implemented use of the PDO extension.  
-
-<footer>
-  Released under the MIT license by <a href="http://remyg.fr/">Remy Gardette</a>
-</footer>
+* Implemented use of the PDO extension.

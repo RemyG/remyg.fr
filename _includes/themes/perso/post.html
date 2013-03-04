@@ -1,5 +1,21 @@
 <div class="page-header">
-  <h1>{{ page.title }} {% if page.tagline %}<small>{{page.tagline}}</small>{% endif %}</h1>
+  <div class="row-fluid">
+    {% if page.flattrable == false %}
+      <div class="span12">
+        <h1>{{ page.title }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
+      </div>
+    {% else %}  
+      <div class="span10">
+        <h1>{{ page.title }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
+      </div>
+      <div class="span2 flattr-div">
+        <a class="FlattrButton" 
+          href="http://remyg.fr{{ page.url }}" 
+          title="{{ page.title }}" 
+          rel="flattr;tags:blog;"></a>
+      </div>
+    {% endif %}
+  </div>
 </div>
 
 <div class="row-fluid post-full">
@@ -10,27 +26,22 @@
     <div class="content">
       {{ content }}
     </div>
+    
+    {% unless page.categories == empty %}
+      <ul class="tag_box inline">
+        <li><i class="icon-folder-open"></i></li>
+        {% assign categories_list = page.categories %}
+        {% include JB/categories_list %}
+      </ul>
+    {% endunless %}  
 
-    <a class="FlattrButton" 
-      href="http://remyg.fr{{ page.url }}" 
-      title="{{ page.title }}" 
-      rel="flattr;tags:blog;"></a>
-
-  {% unless page.categories == empty %}
-    <ul class="tag_box inline">
-      <li><i class="icon-folder-open"></i></li>
-      {% assign categories_list = page.categories %}
-      {% include JB/categories_list %}
-    </ul>
-  {% endunless %}  
-
-  {% unless page.tags == empty %}
-    <ul class="tag_box inline">
-      <li><i class="icon-tags"></i></li>
-      {% assign tags_list = page.tags %}
-      {% include JB/tags_list %}
-    </ul>
-  {% endunless %}  
+    {% unless page.tags == empty %}
+      <ul class="tag_box inline">
+        <li><i class="icon-tags"></i></li>
+        {% assign tags_list = page.tags %}
+        {% include JB/tags_list %}
+      </ul>
+    {% endunless %}
 
     <hr>
     <div class="pagination">

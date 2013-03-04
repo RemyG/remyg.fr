@@ -212,3 +212,6 @@ article.post p.more {
     color: #fff; }
     article.post p.more a:hover {
       background-color: #005580; }
+
+div.flattr-div {
+  margin-top: 22px; }

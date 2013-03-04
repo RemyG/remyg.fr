@@ -38,7 +38,7 @@
     <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
 
     {% if page.flattrable != null %}
-  <link rel="payment" type="text/html" href="https://flattr.com/submit/auto?url=http%3A%2F%2Fremyg.fr{{ page.url | cgi_escape }}&amp;user_id=ramy&amp;title={{ page.title | cgi_escape }}&amp;category=text&amp;tags=blog" title="Flattr this post" />
+  <link rel="payment" type="text/html" href="https://flattr.com/submit/auto?url={{ HOME_PATH }}{{ page.url | cgi_escape }}&amp;user_id=ramy&amp;title={{ page.title | cgi_escape }}&amp;category=text&amp;tags=jekyll" title="Flattr this post" />
   {% endif %}
 
   <script type="text/javascript">

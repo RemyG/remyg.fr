@@ -31,10 +31,6 @@ I write from time to time on:
 	<a class="zocial twitter icon" href="http://twitter.com/remygardette" target="_blank">Twitter: @remygardette</a>
 	<a href="http://twitter.com/remygardette" target="_blank">Twitter: @remygardette</a>
 </div>
-<div class="social-row">
-	<a class="zocial wordpress icon" href="http://dev.remyg.fr" target="_blank">My developments blog</a>
-	<a href="http://dev.remyg.fr" target="_blank">My developments blog</a>
-</div>
 
 My personal projects are hosted on:
 

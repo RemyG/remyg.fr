@@ -202,16 +202,18 @@ article.post header div.post-title h1 {
 article.post header .valign-middle {
   vertical-align: middle; }
 article.post p.more {
-  margin: 20px 0; }
+  margin: 10px 0; }
   article.post p.more a {
-    padding: 7px 15px;
+    display: block;
+    font-weight: bold;
+    /*padding: 7px 15px;
     background-color: #08c;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
-    color: #fff; }
+    color: #fff;*/ }
     article.post p.more a:hover {
-      background-color: #005580; }
+      /*background-color: #005580*/ }
 
 div.flattr-div {
   margin-top: 22px; }

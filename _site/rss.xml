@@ -5,10 +5,75 @@
         <description>Rémy Gardette - Rémy Gardette</description>
         <link>http://remyg.fr</link>
         <link>http://remyg.fr</link>
-        <lastBuildDate>2013-03-04T16:48:33+00:00</lastBuildDate>
-        <pubDate>2013-03-04T16:48:33+00:00</pubDate>
+        <lastBuildDate>2013-03-05T13:58:06+00:00</lastBuildDate>
+        <pubDate>2013-03-05T13:58:06+00:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Use Flattr with Wordpress 3.5.1</title>
+                <description>&lt;p&gt;&lt;a href='http://flattr.com/'&gt;Flattr&lt;/a&gt; is a &amp;#8220;social micro-payment system&amp;#8221;, that allows you to make online payments, when you like an article, a blog, a project&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;ve decided to add it to my personnal websites, both the &lt;a href='http://remyg.fr'&gt;Jekyll site&lt;/a&gt; and my &lt;a href='http://blog.remyg.fr'&gt;Wordpress blog&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Looking at the &lt;a href='https://flattr.com/support/button'&gt;Flattr documentation&lt;/a&gt;, the basic solution for Wordpress.org blogs (hosted blogs) is to use the &lt;a href='https://wordpress.org/extend/plugins/flattr/'&gt;Flattr plugin&lt;/a&gt;. But the current version of the plugin (1.2.0) doesn&amp;#8217;t work with Wordpress 3.5.1. The Flattr button simply isn&amp;#8217;t displayed.&lt;/p&gt;
+
+&lt;p&gt;So I&amp;#8217;ve had to find an alternate solution, which was to simply create a Wordpress function in my theme, and to call this function each time I want to add a Flattr button.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;I&amp;#8217;ve based my code on &lt;a href='http://wpengineer.com/2022/flattr-button-4-wordpress-without-a-plugin/'&gt;this post&lt;/a&gt;, but I&amp;#8217;ve simplified it, as I didn&amp;#8217;t need customization like multi-user handling.&lt;/p&gt;
+
+&lt;p&gt;So the final function, as used on my blog, is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function fb_flattr_link($uid = &amp;#39;ramy&amp;#39;, $cat = &amp;#39;text&amp;#39;, $btn = &amp;#39;compact&amp;#39;) {
+
+	$cat = htmlspecialchars($cat);
+	$btn = htmlspecialchars($btn);
+
+	$ftag = &amp;#39;&amp;#39;;
+	$tags = get_the_tags( get_the_ID() );
+	if ( $tags ) {
+		foreach( $tags as $tag ) {
+			$ftag .= $tag-&amp;gt;name . &amp;#39;, &amp;#39;;
+		}
+		$ftag = substr( $ftag, 0, -2 );
+	} else {
+		$tag = &amp;#39;&amp;#39;;
+	}
+
+	$dsc = htmlspecialchars( strip_tags( trim( get_the_excerpt() ) ) );
+	$dsc = str_replace( &amp;quot;&amp;#39;&amp;quot;, &amp;quot;&amp;quot;, $dsc );
+	$dsc = str_replace( &amp;quot;\n&amp;quot;, &amp;quot; &amp;quot;, $dsc ); // maybe \r\n
+	$dsc = substr($dsc, 0, 150);
+
+	$tle = htmlspecialchars( strip_tags( get_the_title() ) );
+	$tle = str_replace( &amp;quot;&amp;#39;&amp;quot;, &amp;quot;&amp;quot;, $tle );
+
+	$flattr = &amp;#39;
+		&amp;lt;span class=&amp;quot;flattr&amp;quot;&amp;gt;
+			&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+				var flattr_uid = \&amp;#39;&amp;#39; . $uid . &amp;#39;\&amp;#39;;
+				var flattr_url = \&amp;#39;&amp;#39; . get_permalink() . &amp;#39;\&amp;#39;;
+				var flattr_tle = \&amp;#39;&amp;#39; . $tle . &amp;#39;\&amp;#39;;
+				var flattr_dsc = \&amp;#39;&amp;#39; . $dsc . &amp;#39;\&amp;#39;;
+				var flattr_cat = \&amp;#39;&amp;#39; . $cat . &amp;#39;\&amp;#39;;
+				var flattr_tag = \&amp;#39;&amp;#39; . $ftag . &amp;#39;\&amp;#39;;
+				var flattr_btn = \&amp;#39;&amp;#39; . $btn . &amp;#39;\&amp;#39;;
+			&amp;lt;/script&amp;gt;
+			&amp;lt;script src=&amp;quot;http://api.flattr.com/button/load.js&amp;quot; type=&amp;quot;text/javascript&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+		&amp;lt;/span&amp;gt;
+	&amp;#39;;
+
+	echo $flattr;
+
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To use it, I simply use this code each time I want to add a button:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;?php if ( function_exists(&amp;#39;fb_flattr_link&amp;#39;) ) fb_flattr_link(); ?&amp;gt;&lt;/code&gt;&lt;/pre&gt;</description>
+                <link>http://remyg.fr/2013/03/05/use-flattr-with-wordpress-351</link>
+                <guid>http://remyg.fr/2013/03/05/use-flattr-with-wordpress-351</guid>
+                <pubDate>2013-03-05T18:00:00+00:00</pubDate>
+        </item>
 
         <item>
                 <title>RGResponsive</title>

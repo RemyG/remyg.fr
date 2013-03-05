@@ -6,7 +6,7 @@ date: 2012-12-27 18:00
 comments: false
 external-url: 
 tags: [PHP, XML, Script] 
-categories: 
+categories: [Dev]
 ---
 Some time ago, I’ve decided to centralize my resume information in one place, to avoid having to update it on several places every time I changed anything in it.  
 I’ve decided to use the LinkedIn interface to update it, as it allows resumes in different languages (my profile [in French](http://www.linkedin.com/in/remygardette/fr) and [in English](http://www.linkedin.com/in/remygardette/en)).

@@ -4,7 +4,6 @@ title: "RGResponsive"
 tagline: "A responsive Wordpress theme"
 date: 2013-01-23 18:00
 comments: false
-external-url: 
 tags: [PHP, HTML, CSS, Wordpress] 
 categories: [Web]
 ---

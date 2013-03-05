@@ -6,7 +6,7 @@ date: 2013-01-15 18:00
 comments: false
 external-url:
 tags: [PHP, Framework, PDO] 
-categories: 
+categories: [Dev]
 ---
 In my free time, I often work on small personal PHP projects. This allows me to keep in touch with the new technologies, frameworks,... For instance, I've recently started using Bootstrap to create well presented web-applications.
 

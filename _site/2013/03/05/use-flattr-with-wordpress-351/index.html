@@ -3,8 +3,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>RGResponsive</title>
-    
+    <title>Use Flattr with Wordpress 3.5.1</title>
+    <meta name="description" content="">
     <meta name="author" content="Rémy Gardette">
 
     <!-- Enable responsive viewport -->
@@ -494,75 +494,131 @@
       <div class="content">
         
 <div class="page-header">
-  <h1>RGResponsive <small>A responsive Wordpress theme</small></h1>
+  <div class="row-fluid">
+      
+      <div class="span10">
+        <h1>Use Flattr with Wordpress 3.5.1 </h1>
+      </div>
+      <div class="span2 flattr-div">
+        <a class="FlattrButton" 
+          href="http://remyg.fr/2013/03/05/use-flattr-with-wordpress-351" 
+          title="Use Flattr with Wordpress 3.5.1" 
+          rel="flattr;tags:blog;"></a>
+      </div>
+    
+  </div>
 </div>
 
 <div class="row-fluid post-full">
   <div class="span12">
     <div class="date">
-      <span>23 January 2013</strong>
+      <span>05 March 2013</strong>
     </div>
     <div class="content">
-      <p>I&#8217;ve decided to create my own Wordpress theme, RGResponsive.</p>
+      <p><a href='http://flattr.com/'>Flattr</a> is a &#8220;social micro-payment system&#8221;, that allows you to make online payments, when you like an article, a blog, a project&#8230;</p>
 
-<p>You can find the sources for this theme <a href='https://github.com/RemyG/wordpress-rgresponsive'>on GitHub</a>, and see it in action <a href='http://blog.remyg.fr'>on my blog</a>.</p>
+<p>I&#8217;ve decided to add it to my personnal websites, both the <a href='http://remyg.fr'>Jekyll site</a> and my <a href='http://blog.remyg.fr'>Wordpress blog</a>.</p>
 
-<p>You can follow the development and post comments <a href='/projects/rgresponsive/'>on this page</a>.</p>
+<p>Looking at the <a href='https://flattr.com/support/button'>Flattr documentation</a>, the basic solution for Wordpress.org blogs (hosted blogs) is to use the <a href='https://wordpress.org/extend/plugins/flattr/'>Flattr plugin</a>. But the current version of the plugin (1.2.0) doesn&#8217;t work with Wordpress 3.5.1. The Flattr button simply isn&#8217;t displayed.</p>
+
+<p>So I&#8217;ve had to find an alternate solution, which was to simply create a Wordpress function in my theme, and to call this function each time I want to add a Flattr button.</p>
+<!--more-->
+<p>I&#8217;ve based my code on <a href='http://wpengineer.com/2022/flattr-button-4-wordpress-without-a-plugin/'>this post</a>, but I&#8217;ve simplified it, as I didn&#8217;t need customization like multi-user handling.</p>
+
+<p>So the final function, as used on my blog, is:</p>
+
+<pre><code>function fb_flattr_link($uid = &#39;ramy&#39;, $cat = &#39;text&#39;, $btn = &#39;compact&#39;) {
+
+	$cat = htmlspecialchars($cat);
+	$btn = htmlspecialchars($btn);
+
+	$ftag = &#39;&#39;;
+	$tags = get_the_tags( get_the_ID() );
+	if ( $tags ) {
+		foreach( $tags as $tag ) {
+			$ftag .= $tag-&gt;name . &#39;, &#39;;
+		}
+		$ftag = substr( $ftag, 0, -2 );
+	} else {
+		$tag = &#39;&#39;;
+	}
+
+	$dsc = htmlspecialchars( strip_tags( trim( get_the_excerpt() ) ) );
+	$dsc = str_replace( &quot;&#39;&quot;, &quot;&quot;, $dsc );
+	$dsc = str_replace( &quot;\n&quot;, &quot; &quot;, $dsc ); // maybe \r\n
+	$dsc = substr($dsc, 0, 150);
+
+	$tle = htmlspecialchars( strip_tags( get_the_title() ) );
+	$tle = str_replace( &quot;&#39;&quot;, &quot;&quot;, $tle );
+
+	$flattr = &#39;
+		&lt;span class=&quot;flattr&quot;&gt;
+			&lt;script type=&quot;text/javascript&quot;&gt;
+				var flattr_uid = \&#39;&#39; . $uid . &#39;\&#39;;
+				var flattr_url = \&#39;&#39; . get_permalink() . &#39;\&#39;;
+				var flattr_tle = \&#39;&#39; . $tle . &#39;\&#39;;
+				var flattr_dsc = \&#39;&#39; . $dsc . &#39;\&#39;;
+				var flattr_cat = \&#39;&#39; . $cat . &#39;\&#39;;
+				var flattr_tag = \&#39;&#39; . $ftag . &#39;\&#39;;
+				var flattr_btn = \&#39;&#39; . $btn . &#39;\&#39;;
+			&lt;/script&gt;
+			&lt;script src=&quot;http://api.flattr.com/button/load.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+		&lt;/span&gt;
+	&#39;;
+
+	echo $flattr;
+
+}</code></pre>
+
+<p>To use it, I simply use this code each time I want to add a button:</p>
+
+<pre><code>&lt;?php if ( function_exists(&#39;fb_flattr_link&#39;) ) fb_flattr_link(); ?&gt;</code></pre>
     </div>
-
-    <a class="FlattrButton" 
-      href="http://remyg.fr/Web/2013/01/23/rgresponsive-a-responsive-wordpress-theme" 
-      title="RGResponsive" 
-      rel="flattr;tags:blog;"></a>
-
-  
-    <ul class="tag_box inline">
-      <li><i class="icon-folder-open"></i></li>
-      
-      
+    
+    
+      <ul class="tag_box inline">
+        <li><i class="icon-folder-open"></i></li>
+        
+        
 
 
   
      
     	<li><a href="/categories.html#Web-ref">
-    		Web <span>1</span>
+    		Web <span>2</span>
     	</a></li>
     
   
 
 
-    </ul>
+      </ul>
+      
+
     
-
-  
-    <ul class="tag_box inline">
-      <li><i class="icon-tags"></i></li>
-      
-      
+      <ul class="tag_box inline">
+        <li><i class="icon-tags"></i></li>
+        
+        
 
 
   
      
-    	<li><a href="/tags.html#PHP-ref">PHP <span>3</span></a></li>
+    	<li><a href="/tags.html#Flattr-ref">Flattr <span>1</span></a></li>
      
-    	<li><a href="/tags.html#HTML-ref">HTML <span>1</span></a></li>
-     
-    	<li><a href="/tags.html#CSS-ref">CSS <span>1</span></a></li>
-     
-    	<li><a href="/tags.html#Wordpress-ref">Wordpress <span>1</span></a></li>
+    	<li><a href="/tags.html#Wordpress-ref">Wordpress <span>2</span></a></li>
     
   
 
 
 
-    </ul>
+      </ul>
     
 
     <hr>
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2013/01/15/pfp-a-tiny-php-application-framework" title="PFP">&larr; Previous</a></li>
+        <li class="prev"><a href="/2013/01/23/rgresponsive-a-responsive-wordpress-theme" title="RGResponsive">&larr; Previous</a></li>
       
         <li><a href="/archive.html">Archive</a></li>
       
@@ -572,6 +628,26 @@
     </div>
     <hr>
     
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'RemyG'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
   </div>
 </div>
 

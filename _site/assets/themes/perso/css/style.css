@@ -199,6 +199,8 @@ table.professional div.position-header {
 
 article.post header div.post-title h1 {
   font-size: 2em; }
+article.post header .date {
+  font-weight: bold; }
 article.post header .valign-middle {
   vertical-align: middle; }
 article.post p.more {

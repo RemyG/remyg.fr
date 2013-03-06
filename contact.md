@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Contact"
-description: ""
+header: "How to contact me"
 group: navigation
 weight: 5
 css: [zocial]

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Skills"
-description: ""
+header: "My IT skills"
 group: navigation
 weight: 4
 ---

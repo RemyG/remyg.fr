@@ -2,6 +2,8 @@
 layout: page
 title: "FormCreator"
 description: "An HTML form generator"
+tags: [Test]
+categories: [Project]
 ---
 {% include JB/setup %}
 

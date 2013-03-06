@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Projects"
-description: ""
+header: "My personnal projects"
 group: navigation
 weight: 2
 ---

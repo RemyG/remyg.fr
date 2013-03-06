@@ -2,8 +2,8 @@
 layout: post
 title: "Auto-upload Jekyll after pushing to GitHub"
 description: ""
-category: 
-tags: []
+categories: [Web]
+tags: [Jekyll, FTP, OVH]
 date: 2013-03-05 18:30
 ---
 {% include JB/setup %}

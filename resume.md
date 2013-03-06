@@ -1,13 +1,23 @@
 ---
 layout: page
 title: "Resume"
-description: ""
+header: "My resume"
 group: navigation
 weight: 3
 ---
 {% include JB/setup %}
 
-## My professional experience
+<div class="resume-anchor-link">
+	<div>
+		<a href="#professional_experience"><i class="icon-arrow-right"> </i> Professional experience</a>
+	</div>
+	<div>
+		<a href="#education"><i class="icon-arrow-right"> </i> Education</a>
+	</div>
+</div>
+
+
+## Professional experience
 
 <table class="table professional">
 
@@ -33,4 +43,3 @@ weight: 3
 		</td>
 	</tr>
 </table>
-

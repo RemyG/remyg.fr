@@ -1,7 +1,9 @@
 ---
 layout: page
 title: "PFP"
-description: ""
+description: "PFP - A tiny PHP MVC framework"
+tagline: "A tiny PHP MVC framework"
+categories: [Project]
 ---
 {% include JB/setup %}
 

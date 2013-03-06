@@ -2,6 +2,7 @@
 http://remyg.fr/contact.html
 http://remyg.fr/pages.html
 http://remyg.fr/categories.html
+http://remyg.fr/about.html
 http://remyg.fr/archive.html
 http://remyg.fr/rss.xml
 http://remyg.fr/resume.html
@@ -13,6 +14,7 @@ http://remyg.fr/projects/index.html
 http://remyg.fr/projects/formcreator/index.html
 http://remyg.fr/projects/phpscripts/index.html
 http://remyg.fr/index.html
+http://remyg.fr/404.html
 http://remyg.fr/articles.html
 http://remyg.fr/tags.html
 http://remyg.fr/assets/themes/perso/css/style.css

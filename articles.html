@@ -5,6 +5,7 @@ header : Articles
 group: navigation
 weight: 1
 flattrable: false
+rss: true
 ---
 {% include JB/setup %}
 
@@ -38,15 +39,28 @@ flattrable: false
 	          title="{{ page.title }}" 
 	          rel="flattr;tags:blog;"></a>
 	      </div>
-	      <div>
-				{% unless post.tags == empty %}
+	      {% unless post.tags == empty %}
+	      		<div>
+				
 					<i class="icon-tags valign-middle float-left"></i>
 					<ul class="tag_box inline valign-middle">
 						{% assign tags_list = post.tags %}
 						{% include JB/tags_list %}
 					</ul>
-				{% endunless %}  
-			</div>
+				
+				</div>
+			{% endunless %}  
+			{% unless post.categories == empty %}
+	      		<div>
+				
+					<i class="icon-folder-open valign-middle float-left"></i>
+					<ul class="tag_box inline valign-middle">
+						{% assign categories_list = post.categories %}
+						{% include JB/categories_list %}
+					</ul>
+				
+				</div>
+			{% endunless %} 
 		</div>
 	</div>
 

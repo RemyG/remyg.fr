@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Home
+title: Rémy Gardette
 ---
 {% include JB/setup %}
 

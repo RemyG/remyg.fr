@@ -525,16 +525,17 @@
 
 <p>I started by cloning the repository on my personnal server:</p>
 
-<pre><code>$ cd /var/www
-$ git clone https://github.com/RemyG/remyg.fr.git</code></pre>
+<pre><code>$ cd /home/username
+$ mkdir jekyll
+$ git clone https://github.com/RemyG/remyg.fr.git jekyll</code></pre>
 
-<p>This create a clone of the repository in <code>/var/www/remyg.fr</code>.</p>
+<p>This create a clone of the repository in <code>/home/username/jekyll</code>.</p>
 
 <h2 id='create_the_ftp_upload_script'>Create the FTP upload script</h2>
 
-<p>To automatically upload my files via FTP, I used <code>ftp-upload</code>:</p>
+<p>To automatically upload my files via FTP, I used <code>lftp</code>:</p>
 
-<pre><code>$ sudo apt-get install ftp-upload</code></pre>
+<pre><code>$ sudo apt-get install lftp</code></pre>
 
 <p>Then I&#8217;ve created the script used to upload my <code>_site</code> folder to the shared server:</p>
 
@@ -542,26 +543,53 @@ $ git clone https://github.com/RemyG/remyg.fr.git</code></pre>
 $ chmod +x /usr/local/bin/ftp-upload-jekyll.sh
 $ vim /usr/local/bin/ftp-upload-jekyll.sh</code></pre>
 
-<p>The script consists of a single command:</p>
+<p>The content of the script is a simple <code>mirror</code> command:</p>
 
 <pre><code>#!/bin/sh
-ftp-upload --passive -u &quot;username&quot; --password &quot;password&quot; -h &quot;dest_url&quot; -d dest_folder orig_folder/*</code></pre>
 
-<p>When this script is executed, it will upload the content of <code>orig_folder</code> into <code>dest_folder</code>, on the host <code>dest_url</code>.</p>
+lftp -u your_username,your_password your_host_url &lt;&lt;EOF
+
+cd /dest_folder/_site # The distant directory
+lcd /home/username/jekyll/_site # The local directory
+
+mirror -R
+
+quit 0
+
+EOF</code></pre>
+
+<p>When this script is executed, it will upload the content of the local <code>_site</code> folder on the host <code>your_host_url</code>.</p>
+
+<h2 id='create_the_git_pull_script'>Create the git pull script</h2>
+
+<p>Before uploading the website to the server, the repository has to be pulled. I&#8217;ve created a script for it:</p>
+
+<pre><code>$ touch /usr/local/bin/github-pull-jekyll.sh
+$ chmod +x /usr/local/bin/github-pull-jekyll.sh
+$ vim /usr/local/bin/github-pull-jekyll.sh</code></pre>
+
+<p>The content of the script is simply:</p>
+
+<pre><code>#!/bin/sh
+
+cd /home/username/jekyll
+git pull</code></pre>
+
+<p>When this script is executed, it will pull the repository.</p>
 
 <h2 id='create_a_github_postreceive_hook'>Create a GitHub post-receive hook</h2>
 
 <h3 id='on_my_personnal_server'>On my personnal server</h3>
 
-<p>I&#8217;ve just created a PHP file, which is exposed on Internet, and in the same folder as the git repository.</p>
+<p>I&#8217;ve just created a PHP file, which is exposed on Internet.</p>
 
-<pre><code>$ cd /var/www/remyg.fr
+<pre><code>$ cd /var/www
 $ vim github-hook.php</code></pre>
 
 <p>The content of this file is very simple: first it pulls the repository, then it calls the script <code>ftp-upload-jekyll.sh</code> to upload the content of the <code>_site</code> folder to the shared server.</p>
 
 <pre><code>&lt;?php
-    `git pull`;
+    `sh /usr/local/bin/github-pull-jekyll.sh`;
     `sh /usr/local/bin/ftp-upload-jekyll.sh`;
 ?&gt;</code></pre>
 

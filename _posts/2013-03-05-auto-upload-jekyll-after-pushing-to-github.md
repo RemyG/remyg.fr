@@ -20,16 +20,17 @@ But I've actually found another way to automate the process. For this I need my 
 
 I started by cloning the repository on my personnal server:
 
-    $ cd /var/www
-    $ git clone https://github.com/RemyG/remyg.fr.git
+    $ cd /home/username
+    $ mkdir jekyll
+    $ git clone https://github.com/RemyG/remyg.fr.git jekyll
 
-This create a clone of the repository in `/var/www/remyg.fr`.
+This create a clone of the repository in `/home/username/jekyll`.
 
 ## Create the FTP upload script
 
-To automatically upload my files via FTP, I used `ftp-upload`:
+To automatically upload my files via FTP, I used `lftp`:
 
-    $ sudo apt-get install ftp-upload
+    $ sudo apt-get install lftp
 
 Then I've created the script used to upload my `_site` folder to the shared server:
 
@@ -37,26 +38,53 @@ Then I've created the script used to upload my `_site` folder to the shared serv
     $ chmod +x /usr/local/bin/ftp-upload-jekyll.sh
     $ vim /usr/local/bin/ftp-upload-jekyll.sh
 
-The script consists of a single command:
+The content of the script is a simple `mirror` command:
 
     #!/bin/sh
-    ftp-upload --passive -u "username" --password "password" -h "dest_url" -d dest_folder orig_folder/*
+
+    lftp -u your_username,your_password your_host_url <<EOF
+
+    cd /dest_folder/_site # The distant directory
+    lcd /home/username/jekyll/_site # The local directory
+
+    mirror -R
+
+    quit 0
+
+    EOF
 	
-When this script is executed, it will upload the content of `orig_folder` into `dest_folder`, on the host `dest_url`.
+When this script is executed, it will upload the content of the local `_site` folder on the host `your_host_url`.
+
+## Create the git pull script
+
+Before uploading the website to the server, the repository has to be pulled. I've created a script for it:
+
+    $ touch /usr/local/bin/github-pull-jekyll.sh
+    $ chmod +x /usr/local/bin/github-pull-jekyll.sh
+    $ vim /usr/local/bin/github-pull-jekyll.sh
+
+The content of the script is simply:
+
+    #!/bin/sh
+
+    cd /home/username/jekyll
+    git pull
+
+When this script is executed, it will pull the repository.
 
 ## Create a GitHub post-receive hook
 
 ### On my personnal server
 
-I've just created a PHP file, which is exposed on Internet, and in the same folder as the git repository.
+I've just created a PHP file, which is exposed on Internet.
 
-    $ cd /var/www/remyg.fr
+    $ cd /var/www
     $ vim github-hook.php
 
 The content of this file is very simple: first it pulls the repository, then it calls the script `ftp-upload-jekyll.sh` to upload the content of the `_site` folder to the shared server.
 
     <?php
-        `git pull`;
+        `sh /usr/local/bin/github-pull-jekyll.sh`;
         `sh /usr/local/bin/ftp-upload-jekyll.sh`;
     ?>
 

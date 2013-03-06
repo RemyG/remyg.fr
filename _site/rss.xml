@@ -5,8 +5,8 @@
         <description>Rémy Gardette - Rémy Gardette</description>
         <link>http://remyg.fr</link>
         <link>http://remyg.fr</link>
-        <lastBuildDate>2013-03-05T15:52:09+00:00</lastBuildDate>
-        <pubDate>2013-03-05T15:52:09+00:00</pubDate>
+        <lastBuildDate>2013-03-06T08:41:36+00:00</lastBuildDate>
+        <pubDate>2013-03-06T08:41:36+00:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -22,16 +22,17 @@
 
 &lt;p&gt;I started by cloning the repository on my personnal server:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ cd /var/www
-$ git clone https://github.com/RemyG/remyg.fr.git&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;$ cd /home/username
+$ mkdir jekyll
+$ git clone https://github.com/RemyG/remyg.fr.git jekyll&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This create a clone of the repository in &lt;code&gt;/var/www/remyg.fr&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This create a clone of the repository in &lt;code&gt;/home/username/jekyll&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h2 id='create_the_ftp_upload_script'&gt;Create the FTP upload script&lt;/h2&gt;
 
-&lt;p&gt;To automatically upload my files via FTP, I used &lt;code&gt;ftp-upload&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;To automatically upload my files via FTP, I used &lt;code&gt;lftp&lt;/code&gt;:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ sudo apt-get install ftp-upload&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get install lftp&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Then I&amp;#8217;ve created the script used to upload my &lt;code&gt;_site&lt;/code&gt; folder to the shared server:&lt;/p&gt;
 
@@ -39,26 +40,53 @@ $ git clone https://github.com/RemyG/remyg.fr.git&lt;/code&gt;&lt;/pre&gt;
 $ chmod +x /usr/local/bin/ftp-upload-jekyll.sh
 $ vim /usr/local/bin/ftp-upload-jekyll.sh&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;The script consists of a single command:&lt;/p&gt;
+&lt;p&gt;The content of the script is a simple &lt;code&gt;mirror&lt;/code&gt; command:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;#!/bin/sh
-ftp-upload --passive -u &amp;quot;username&amp;quot; --password &amp;quot;password&amp;quot; -h &amp;quot;dest_url&amp;quot; -d dest_folder orig_folder/*&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;When this script is executed, it will upload the content of &lt;code&gt;orig_folder&lt;/code&gt; into &lt;code&gt;dest_folder&lt;/code&gt;, on the host &lt;code&gt;dest_url&lt;/code&gt;.&lt;/p&gt;
+lftp -u your_username,your_password your_host_url &amp;lt;&amp;lt;EOF
+
+cd /dest_folder/_site # The distant directory
+lcd /home/username/jekyll/_site # The local directory
+
+mirror -R
+
+quit 0
+
+EOF&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When this script is executed, it will upload the content of the local &lt;code&gt;_site&lt;/code&gt; folder on the host &lt;code&gt;your_host_url&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id='create_the_git_pull_script'&gt;Create the git pull script&lt;/h2&gt;
+
+&lt;p&gt;Before uploading the website to the server, the repository has to be pulled. I&amp;#8217;ve created a script for it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ touch /usr/local/bin/github-pull-jekyll.sh
+$ chmod +x /usr/local/bin/github-pull-jekyll.sh
+$ vim /usr/local/bin/github-pull-jekyll.sh&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The content of the script is simply:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/sh
+
+cd /home/username/jekyll
+git pull&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When this script is executed, it will pull the repository.&lt;/p&gt;
 
 &lt;h2 id='create_a_github_postreceive_hook'&gt;Create a GitHub post-receive hook&lt;/h2&gt;
 
 &lt;h3 id='on_my_personnal_server'&gt;On my personnal server&lt;/h3&gt;
 
-&lt;p&gt;I&amp;#8217;ve just created a PHP file, which is exposed on Internet, and in the same folder as the git repository.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ve just created a PHP file, which is exposed on Internet.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ cd /var/www/remyg.fr
+&lt;pre&gt;&lt;code&gt;$ cd /var/www
 $ vim github-hook.php&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;The content of this file is very simple: first it pulls the repository, then it calls the script &lt;code&gt;ftp-upload-jekyll.sh&lt;/code&gt; to upload the content of the &lt;code&gt;_site&lt;/code&gt; folder to the shared server.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;?php
-    `git pull`;
+    `sh /usr/local/bin/github-pull-jekyll.sh`;
     `sh /usr/local/bin/ftp-upload-jekyll.sh`;
 ?&amp;gt;&lt;/code&gt;&lt;/pre&gt;
 

@@ -161,10 +161,18 @@ img.image-rounded {
   border-radius: 5px; }
 
 div.social-row {
-  margin: 7px 30px; }
+  margin: 7px 30px;
+  margin-right: 0; }
+  div.social-row a {
+    display: inline-block; }
 
 div.contact-row {
-  margin: 7px 30px; }
+  margin: 7px 30px;
+  margin-right: 0; }
+  div.contact-row a, div.contact-row p {
+    display: inline-block; }
+  div.contact-row address p {
+    margin-bottom: 2px; }
 
 span.zocial, a.zocial {
   font-size: 0.8em;

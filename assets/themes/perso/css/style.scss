@@ -191,10 +191,21 @@ img.image-rounded {
 
 div.social-row {
   margin: 7px 30px;
+  margin-right: 0;
+  a {
+    display: inline-block;
+  }
 }
 
 div.contact-row {
   margin: 7px 30px;
+  margin-right: 0;
+  a, p {
+    display: inline-block;
+  }
+  address p {
+    margin-bottom: 2px;
+  }
 }
 
 span.zocial, a.zocial {

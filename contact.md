@@ -8,6 +8,10 @@ css: [zocial]
 ---
 {% include JB/setup %}
 
+<div class="row-fluid" markdown="1">
+
+<div class="span4">
+
 ## Social
 
 You can find my professional information on:
@@ -39,7 +43,11 @@ My personal projects are hosted on:
 	<a href="https://github.com/RemyG" target="_blank">GitHub: RemyG</a>
 </div>
 
-## Contact
+</div>
+
+<div class="span4">
+
+## Get in touch
 
 You can contact me by:
 
@@ -64,4 +72,8 @@ You can contact me by:
 		Flat 3 - 2 Boot Lane<br>
 		BS3 4HX Bristol, UK<br>
 	</address>
+</div>
+
+</div>
+
 </div>

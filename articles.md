@@ -10,11 +10,22 @@ rss: true
 {% include JB/setup %}
 
 {% for post in site.posts limit: 10 %}
+
 <article class="post">
 	<header>
 		<div class="row-fluid">
-			<div class="date span10"><span class="valign-middle"><i class="icon-time"></i> {{ post.date | date:"%Y-%m-%d" }}</span></div>			
-			<div class="span2 comments-heading"><span class="valign-middle"><i class="icon-comment"></i> <a href="{{post.url}}/#disqus_thread">Comments</a></span></div>
+			<div class="date span10">
+				<span class="valign-middle">
+					<i class="icon-time"> </i>
+					{{ post.date | date:"%Y-%m-%d" }}
+				</span>
+			</div>			
+			<div class="span2 comments-heading">
+				<span class="valign-middle">
+					<i class="icon-comment"> </i>
+					<a href="{{post.url}}/#disqus_thread">Comments</a>
+				</span>
+			</div>
 		</div>
 
 		<div class="row-fluid">
@@ -34,32 +45,28 @@ rss: true
 			</div>
 
 			<div class="flattr-div">
-	        <a class="FlattrButton" 
-	          href="http://remyg.fr{{ page.url }}" 
-	          title="{{ page.title }}" 
-	          rel="flattr;tags:blog;"></a>
-	      </div>
-	      {% unless post.tags == empty %}
-	      		<div>
-				
-					<i class="icon-tags valign-middle float-left"></i>
+				<a class="FlattrButton" 
+					href="http://remyg.fr{{ page.url }}" 
+					title="{{ page.title }}" 
+					rel="flattr;tags:blog;"> </a>
+			</div>
+			{% unless post.tags == empty %}
+				<div>
+					<i class="icon-tags valign-middle float-left"> </i>
 					<ul class="tag_box inline valign-middle">
 						{% assign tags_list = post.tags %}
 						{% include JB/tags_list %}
 					</ul>
-				
 				</div>
 			{% endunless %}  
 			{% unless post.categories == empty %}
-	      		<div>
-				
-					<i class="icon-folder-open valign-middle float-left"></i>
-					<ul class="tag_box inline valign-middle">
-						{% assign categories_list = post.categories %}
-						{% include JB/categories_list %}
-					</ul>
-				
-				</div>
+			<div>
+				<i class="icon-folder-open valign-middle float-left"> </i>
+				<ul class="tag_box inline valign-middle">
+					{% assign categories_list = post.categories %}
+					{% include JB/categories_list %}
+				</ul>
+			</div>
 			{% endunless %} 
 		</div>
 	</div>
@@ -70,6 +77,7 @@ rss: true
 		</div>
 	</div>
 </article>
+
 {% endfor %}
 
 <p>

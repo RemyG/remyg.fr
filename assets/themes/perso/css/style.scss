@@ -324,3 +324,42 @@ i {
 div.row-rss-link {
   margin-bottom: 15px;
 }
+
+#followGithub {
+  background-color: #ECECEC;
+  background-image: linear-gradient(#F4F4F4, #ECECEC);
+  border: 1px solid #D4D4D4;
+  border-radius: 0.2em 0.2em 0.2em 0.2em;
+  color: #333333;
+  font: 11px sans-serif;
+  margin: 0;
+  outline: medium none;
+  overflow: visible;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  text-shadow: 1px 1px 0 #FFFFFF;
+  vertical-align: middle;
+  &:hover {
+    color: #FFFFFF;
+    background-color: #3072B3;
+    background-image: linear-gradient(#599BDC, #3072B3);
+    border-color: #3072B3 #3072B3 #2A65A0;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+    img {
+      /*-webkit-filter: invert(100%);  */
+      -webkit-filter: brightness(100%);  
+    }
+    span {
+
+    }
+  }
+  img { 
+    position: relative;
+    top: -1px;
+    margin: 0 6px 0 0;
+  }
+  span {
+    position: relative;
+    top: 1px;
+  }
+}

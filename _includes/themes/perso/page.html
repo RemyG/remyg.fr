@@ -5,9 +5,9 @@
 		{% if page.rss == true %}  
 			<div class="span10">
 				{% if page.header %}
-					<h1>{{ page.header }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
+					<h1>{{ page.header }} {% if page.tagline %} <small> - {{ page.tagline }}</small>{% endif %}</h1>
 				{% else %}
-					<h1>{{ page.title }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
+					<h1>{{ page.title }} {% if page.tagline %} <small> - {{ page.tagline }}</small>{% endif %}</h1>
 				{% endif %}	
 			</div>
 			<div class="span2 flattr-div">
@@ -16,17 +16,17 @@
 		{% elsif page.flattrable == false %}
 			<div class="span12">
 				{% if page.header %}
-					<h1>{{ page.header }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
+					<h1>{{ page.header }} {% if page.tagline %} <small> - {{ page.tagline }}</small>{% endif %}</h1>
 				{% else %}
-					<h1>{{ page.title }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
+					<h1>{{ page.title }} {% if page.tagline %} <small> - {{ page.tagline }}</small>{% endif %}</h1>
 				{% endif %}				
 			</div>
 		{% else %}  
 			<div class="span10">
 				{% if page.header %}
-					<h1>{{ page.header }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
+					<h1>{{ page.header }} {% if page.tagline %} <small> - {{ page.tagline }}</small>{% endif %}</h1>
 				{% else %}
-					<h1>{{ page.title }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
+					<h1>{{ page.title }} {% if page.tagline %} <small> - {{ page.tagline }}</small>{% endif %}</h1>
 				{% endif %}	
 			</div>
 			<div class="span2 flattr-div">

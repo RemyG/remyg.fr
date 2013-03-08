@@ -51,6 +51,12 @@
   })();
   </script>
 
+  {% for item in page.js %}
+    {% if item == 'jquery' %}
+      <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery-1.9.1.min.js"></script>
+    {% endif %}
+  {% endfor %}  
+
   </head>
 
   <body>

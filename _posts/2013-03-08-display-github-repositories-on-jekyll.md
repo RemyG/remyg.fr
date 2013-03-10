@@ -4,13 +4,15 @@ title: "Display GitHub repositories on Jekyll"
 description: ""
 category: Web
 tags: [GitHub, AJAX, jQuery]
-published: false
+published: true
 ---
 {% include JB/setup %}
 
 This website is mostly meant to present my personnal work and projects, which are stored on GitHub. That's why I wanted to display the last GitHub repositories I've worked on.
 
 To do that, I've decided to use jQuery to make an AJAX call to the GitHub API, and display the result on my home page.
+
+<!-- more -->
 
 ## Get jQuery
 
@@ -95,3 +97,11 @@ Now it's time to write the AJAX call that will retrieve the list. I use jQuery t
     // -->
     </script>{% endraw %}
 
+## Configure Jekyll to retrieve the repositories
+
+And then it's just a matter of configuring your GitHub information. In `_config.yml`, just add:
+
+    github:
+      user: your_github_username
+      repo_count: 5
+      show_profile_link: true

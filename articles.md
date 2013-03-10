@@ -27,7 +27,6 @@ rss: true
 				</span>
 			</div>
 		</div>
-
 		<div class="row-fluid">
 			<div class="span12 post-title">
 				<h1>
@@ -37,13 +36,11 @@ rss: true
 			</div>
 		</div>
 	</header>
-
 	<div class="row-fluid">
 		<div class="span12 post-wrapper">
 			<div class="post-content">
 				{{ post.content | postmorefilter: post.url, "Continue Reading &raquo;" }}
 			</div>
-
 			<div class="flattr-div">
 				<a class="FlattrButton" 
 					href="http://remyg.fr{{ page.url }}" 
@@ -70,7 +67,6 @@ rss: true
 			{% endunless %} 
 		</div>
 	</div>
-
 	<div class="row-fluid">
 		<div class="span12">
 			<hr/>

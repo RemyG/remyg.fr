@@ -5,10 +5,134 @@
         <description>Rémy Gardette - Rémy Gardette</description>
         <link>http://remyg.fr</link>
         <link>http://remyg.fr</link>
-        <lastBuildDate>2013-03-08T17:03:56+00:00</lastBuildDate>
-        <pubDate>2013-03-08T17:03:56+00:00</pubDate>
+        <lastBuildDate>2013-03-10T00:45:27+00:00</lastBuildDate>
+        <pubDate>2013-03-10T00:45:27+00:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Install Jekyll on Ubuntu</title>
+                <description>&lt;p&gt;Here are the easy steps to install and use Jekyll on Ubuntu. It&amp;#8217;s mainly based on &lt;a href='http://www.garron.me/bits/install-jekyll-on-ubuntu.html'&gt;this post&lt;/a&gt; by Guillermo Garron.&lt;/p&gt;
+
+&lt;h2 id='install_ruby_dev'&gt;Install Ruby dev&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install ruby1.9.1-dev&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id='install_jekyll'&gt;Install Jekyll&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo gem install jekyll&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id='install_rake'&gt;Install Rake&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install rake&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You&amp;#8217;re now ready to blog!&lt;/p&gt;</description>
+                <link>http://remyg.fr/2013/03/09/install-jekyll-on-ubuntu</link>
+                <guid>http://remyg.fr/2013/03/09/install-jekyll-on-ubuntu</guid>
+                <pubDate>2013-03-09T00:00:00+00:00</pubDate>
+        </item>
+
+        <item>
+                <title>Display GitHub repositories on Jekyll</title>
+                <description>&lt;p&gt;This website is mostly meant to present my personnal work and projects, which are stored on GitHub. That&amp;#8217;s why I wanted to display the last GitHub repositories I&amp;#8217;ve worked on.&lt;/p&gt;
+
+&lt;p&gt;To do that, I&amp;#8217;ve decided to use jQuery to make an AJAX call to the GitHub API, and display the result on my home page.&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;h2 id='get_jquery'&gt;Get jQuery&lt;/h2&gt;
+
+&lt;p&gt;Start by downloading the compressed version of jQuery (for me it was jquery-1.9.1.min.js) on &lt;a href='http://jquery.com/download/'&gt;the official site&lt;/a&gt;. Save the file in the directory &lt;code&gt;assets/themes/your_theme/js/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Include the script file in your default layout (&lt;code&gt;_includes/themes/your_theme/default.html&lt;/code&gt;). I always include the file in the head of the HTML:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;...
+
+{% for item in page.js %}
+    {% if item == &amp;#39;jquery&amp;#39; %}
+        &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;{{ ASSET_PATH }}/js/jquery-1.9.1.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+    {% endif %}
+{% endfor %}    
+
+&amp;lt;/head&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The loop and condition allow me to only include the file when needed. I&amp;#8217;ll explain later how to trigger the include in a specific page.&lt;/p&gt;
+
+&lt;h2 id='create_the_layout_used_to_display_the_repositories'&gt;Create the layout used to display the repositories&lt;/h2&gt;
+
+&lt;p&gt;The layout is created as &lt;code&gt;_includes/JB/github&lt;/code&gt; (no extension).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{% if site.github.user %}
+    &amp;lt;section&amp;gt;
+        &amp;lt;h2&amp;gt;On GitHub&amp;lt;/h2&amp;gt;
+        &amp;lt;div id=&amp;quot;gh_repos&amp;quot;&amp;gt;
+            &amp;lt;p&amp;gt;Status updating...&amp;lt;/p&amp;gt;
+        &amp;lt;/div&amp;gt;
+        {% if site.github.show_profile_link %}
+            &amp;lt;a href=&amp;quot;https://github.com/{{site.github.user}}&amp;quot;
+                title=&amp;quot;Follow {{site.github.user}} on Github&amp;quot; id=&amp;quot;followGithub&amp;quot; class=&amp;quot;noBg&amp;quot;&amp;gt;
+                &amp;lt;img src=&amp;quot;https://github.com/favicon.ico&amp;quot; /&amp;gt;
+                &amp;lt;span&amp;gt;Follow me on Github&amp;lt;/span&amp;gt;
+            &amp;lt;/a&amp;gt;
+        {% endif %}
+    &amp;lt;/section&amp;gt;
+{% endif %}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The configuration for &lt;code&gt;site.github.user&lt;/code&gt; and &lt;code&gt;site.github.show_profile_link&lt;/code&gt; will be put in &lt;code&gt;_config.yml&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id='make_the_ajax_call_and_display_the_results'&gt;Make the AJAX call and display the results&lt;/h2&gt;
+
+&lt;p&gt;I want to display my repositories on my home page, which is &lt;code&gt;index.md&lt;/code&gt; for my configuration.&lt;/p&gt;
+
+&lt;p&gt;First you have to enable the inclusion of jQuery for this page. So add this in the YAML Front Matter:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;js: [jquery]&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then, we have to include the layout &lt;code&gt;github&lt;/code&gt; we just wrote, where we want to display the list of repositories:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{% include JB/github %}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now it&amp;#8217;s time to write the AJAX call that will retrieve the list. I use jQuery to simplify the JS manipulation, but you can write all this in basic JS:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+// &amp;lt;!--
+    $.ajax({
+        type: &amp;quot;GET&amp;quot;,
+        url: &amp;#39;https://api.github.com/users/{{ site.github.user }}/repos?callback=?&amp;#39;,
+        data: { type: &amp;quot;all&amp;quot;, sort: &amp;quot;pushed&amp;quot;, direction: &amp;quot;desc&amp;quot; },
+        dataType: &amp;#39;json&amp;#39;,
+        success: function(resp) {
+            if (resp.data.length &amp;gt; 0) {
+                $(&amp;#39;#gh_repos&amp;#39;).html(&amp;#39;&amp;lt;ul&amp;gt;&amp;lt;/ul&amp;gt;&amp;#39;);
+                for(var i = 0; i &amp;lt; $(resp.data).length &amp;amp;&amp;amp; i &amp;lt; {{ site.github.repo_count }}; i++) 
+                {
+                   $(&amp;#39;#gh_repos &amp;gt; ul&amp;#39;).append(
+                        &amp;#39;&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;&amp;#39; + resp.data[i][&amp;#39;html_url&amp;#39;] + &amp;#39;&amp;quot;&amp;gt;&amp;#39;
+                        + resp.data[i][&amp;#39;name&amp;#39;] + &amp;#39;&amp;lt;/a&amp;gt;&amp;#39;
+                        + &amp;#39;&amp;lt;p&amp;gt;&amp;#39; 
+                        + (resp.data[i][&amp;#39;description&amp;#39;] ? resp.data[i][&amp;#39;description&amp;#39;] : &amp;#39;(No description)&amp;#39;) 
+                        + &amp;#39;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&amp;#39;
+                    );
+                }
+            }
+            else {
+                $(&amp;#39;#gh_repos&amp;#39;).html(&amp;#39;&amp;lt;p&amp;gt;No public repositories.&amp;lt;/p&amp;gt;&amp;#39;);
+            }
+        }
+    });
+// --&amp;gt;
+&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id='configure_jekyll_to_retrieve_the_repositories'&gt;Configure Jekyll to retrieve the repositories&lt;/h2&gt;
+
+&lt;p&gt;And then it&amp;#8217;s just a matter of configuring your GitHub information. In &lt;code&gt;_config.yml&lt;/code&gt;, just add:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;github:
+  user: your_github_username
+  repo_count: 5
+  show_profile_link: true&lt;/code&gt;&lt;/pre&gt;</description>
+                <link>http://remyg.fr/2013/03/08/display-github-repositories-on-jekyll</link>
+                <guid>http://remyg.fr/2013/03/08/display-github-repositories-on-jekyll</guid>
+                <pubDate>2013-03-08T00:00:00+00:00</pubDate>
+        </item>
 
         <item>
                 <title>Auto-upload Jekyll after pushing to GitHub</title>

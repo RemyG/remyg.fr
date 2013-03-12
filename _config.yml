@@ -136,3 +136,8 @@ github:
   repo_count: 5
   show_profile_link: true
   skip_forks: true
+
+twitter:
+  user: remygardette
+  tweet_count: 5
+  show_profile_link: true

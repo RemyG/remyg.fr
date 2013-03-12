@@ -7,7 +7,7 @@
 		{% if site.github.show_profile_link %}
 			<a href="https://github.com/{{site.github.user}}"
 				title="Follow {{site.github.user}} on Github" id="followGithub" class="noBg">
-				<img src="https://github.com/favicon.ico" />
+				<img src="{{ '/img/blacktocat.png' }}" />
 				<span>Follow me on Github</span>
 			</a>
 		{% endif %}

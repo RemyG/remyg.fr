@@ -78,4 +78,67 @@ You can find on this website my personal information, where to find me on the in
         </script>
     </div>
 
+
+    <div class="span4">
+        {% include JB/twitter %}
+        <script type="text/javascript">
+        // <!--
+            String.prototype.linkify = function() {
+                return this.replace(/[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&\?\/.=]+/, 
+                    function(m) {
+                        return m.link(m);
+                    });
+            };
+
+            function relative_time(time_value) {
+                  var values = time_value.split(" ");
+                  time_value = values[1] + " " + values[2] + ", " + values[5] + " " + values[3];
+                  var parsed_date = Date.parse(time_value);
+                  var relative_to = (arguments.length > 1) ? arguments[1] : new Date();
+                  var delta = parseInt((relative_to.getTime() - parsed_date) / 1000);
+                  delta = delta + (relative_to.getTimezoneOffset() * 60);
+                  var r = '';
+                  if (delta < 60) {
+                    r = 'a minute ago';
+                  } else if(delta < 120) {
+                    r = 'couple of minutes ago';
+                  } else if(delta < (45*60)) {
+                    r = (parseInt(delta / 60)).toString() + ' minutes ago';
+                  } else if(delta < (90*60)) {
+                    r = 'an hour ago';
+                  } else if(delta < (24*60*60)) {
+                    r = '' + (parseInt(delta / 3600)).toString() + ' hours ago';
+                  } else if(delta < (48*60*60)) {
+                    r = '1 day ago';
+                  } else {
+                    r = (parseInt(delta / 86400)).toString() + ' days ago';
+                  }
+                  return r;
+            }
+
+            $.ajax({
+                type: "GET",
+                url: 'https://api.twitter.com/1/statuses/user_timeline/{{ site.twitter.user }}.json?count={{ site.twitter.tweet_count }}&callback=?',
+                dataType: 'json',
+                success: function(resp) {
+                    if (resp.length > 0) {
+                        $('#last_tweets').html('<ul></ul>');
+                        $.each(resp, function(i, item) {
+                            $("#last_tweets > ul").append("<li>" 
+                                + item.text.linkify() 
+                                + " <span class='created_at'>" 
+                                + relative_time(item.created_at) 
+                                + " via " 
+                                + item.source
+                                + "</span></li>");
+                        });
+                    }
+                    else {
+                        $('#last_tweets').html('<p>No public tweets.</p>');
+                    }
+                }
+            });
+        // -->
+        </script>
+    </div>
 </div>

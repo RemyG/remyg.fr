@@ -250,7 +250,8 @@ i {
 div.row-rss-link {
   margin-bottom: 15px; }
 
-#followGithub {
+#followGithub,
+#followTwitter {
   background-color: #ECECEC;
   background-image: linear-gradient(#f4f4f4, #ececec);
   border: 1px solid #D4D4D4;
@@ -264,35 +265,46 @@ div.row-rss-link {
   text-decoration: none;
   text-shadow: 1px 1px 0 #FFFFFF;
   vertical-align: middle; }
-  #followGithub:hover {
+  #followGithub:hover,
+  #followTwitter:hover {
     color: #FFFFFF;
     background-color: #3072B3;
     background-image: linear-gradient(#599bdc, #3072b3);
     border-color: #3072B3 #3072B3 #2A65A0;
     text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3); }
-    #followGithub:hover img {
-      /*-webkit-filter: invert(100%);  */
+    #followGithub:hover img,
+    #followTwitter:hover img {
       -webkit-filter: brightness(100%); }
-  #followGithub img {
+  #followGithub img,
+  #followTwitter img {
     position: relative;
     top: -1px;
-    margin: 0 6px 0 0; }
-  #followGithub span {
+    margin: 0 6px 0 0;
+    height: 20px;
+    display: inline-block; }
+  #followGithub span,
+  #followTwitter span {
     position: relative;
-    top: 1px; }
+    top: 1px;
+    display: inline-block; }
 
 div.row-contact {
   padding-left: 25px;
   margin-bottom: 5px; }
   div.row-contact a {
-    text-decoration: none; }
+    text-decoration: none;
+    overflow: hidden; }
     div.row-contact a:hover span {
       text-decoration: underline; }
   div.row-contact img {
     display: inline-block;
     height: 32px;
-    padding-right: 10px; }
+    border: 1px solid #ccc;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px; }
   div.row-contact span {
+    padding-left: 10px;
     display: inline-block; }
   div.row-contact address {
     margin-top: 15px;

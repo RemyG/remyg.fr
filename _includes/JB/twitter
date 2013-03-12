@@ -1,0 +1,15 @@
+{% if site.twitter.user %}
+	<section>
+		<h2>Last tweets</h2>
+		<div id="last_tweets">
+			<p>Updating...</p>
+		</div>
+		{% if site.twitter.show_profile_link %}
+			<a href="https://twitter.com/{{site.twitter.user}}"
+				title="Follow {{site.twitter.user}} on Twitter" id="followTwitter" class="noBg">
+				<img src="{{ '/img/twitter.png' }}" />
+				<span>Follow me on Twitter</span>
+			</a>
+		{% endif %}
+	</section>
+{% endif %}

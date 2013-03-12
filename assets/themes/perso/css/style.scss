@@ -326,7 +326,8 @@ div.row-rss-link {
   margin-bottom: 15px;
 }
 
-#followGithub {
+#followGithub,
+#followTwitter {
   background-color: #ECECEC;
   background-image: linear-gradient(#F4F4F4, #ECECEC);
   border: 1px solid #D4D4D4;
@@ -347,7 +348,6 @@ div.row-rss-link {
     border-color: #3072B3 #3072B3 #2A65A0;
     text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
     img {
-      /*-webkit-filter: invert(100%);  */
       -webkit-filter: brightness(100%);  
     }
     span {
@@ -358,10 +358,13 @@ div.row-rss-link {
     position: relative;
     top: -1px;
     margin: 0 6px 0 0;
+    height: 20px;
+    display: inline-block;
   }
   span {
     position: relative;
     top: 1px;
+    display: inline-block;
   }
 }
 
@@ -370,6 +373,7 @@ div.row-contact {
   margin-bottom: 5px;
   a {
     text-decoration: none;
+    overflow: hidden;
     &:hover {
       span {
         text-decoration: underline;
@@ -379,9 +383,13 @@ div.row-contact {
   img {
     display: inline-block;
     height: 32px;
-    padding-right: 10px;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
   }
   span {
+    padding-left: 10px;
     display: inline-block;
   }
   address {

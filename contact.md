@@ -16,31 +16,41 @@ css: [zocial]
 
 You can find my professional information on:
 
-<div class="social-row">
-	<a class="zocial linkedin icon" href="http://fr.linkedin.com/in/remygardette" target="_blank">LinkedIn</a>
-	<a href="http://fr.linkedin.com/in/remygardette" target="_blank">LinkedIn</a>
+<div class="row-contact">
+	<a href="http://fr.linkedin.com/in/remygardette">
+		<img src="{{ '/img/linkedin-logo.png' }}" />
+		<span>LinkedIn</span>
+	</a>
 </div>
-<div class="social-row">
-	<a class="zocial viadeo icon" href="http://www.viadeo.com/fr/profile/remy.gardette1" target="_blank">Viadeo</a>
-	<a href="http://www.viadeo.com/fr/profile/remy.gardette1" target="_blank">Viadeo</a>
+<div class="row-contact">
+	<a href="http://www.viadeo.com/fr/profile/remy.gardette1">
+		<img src="{{ '/img/viadeo-logo.png' }}" />
+		<span>Viadeo</span>
+	</a>
 </div>
 
 I write from time to time on:
 
-<div class="social-row">
-	<a class="zocial wordpress icon" href="http://blog.remyg.fr" target="_blank">My blog</a>
-	<a href="http://blog.remyg.fr" target="_blank">My blog</a>
+<div class="row-contact">
+	<a href="http://blog.remyg.fr">
+		<img src="{{ '/img/wordpress-logo.png' }}" />
+		<span>My blog</span>
+	</a>
 </div>
-<div class="social-row">
-	<a class="zocial twitter icon" href="http://twitter.com/remygardette" target="_blank">Twitter: @remygardette</a>
-	<a href="http://twitter.com/remygardette" target="_blank">Twitter: @remygardette</a>
+<div class="row-contact">
+	<a href="http://twitter.com/remygardette">
+		<img src="{{ '/img/twitter-logo.png' }}" />
+		<span>Twitter: @remygardette</span>
+	</a>
 </div>
 
 My personal projects are hosted on:
 
-<div class="social-row">
-	<a class="zocial github icon" href="https://github.com/RemyG" target="_blank">GitHub: RemyG</a>
-	<a href="https://github.com/RemyG" target="_blank">GitHub: RemyG</a>
+<div class="row-contact">
+	<a href="https://github.com/RemyG">
+		<img src="{{ '/img/github-logo.png' }}" />
+		<span>GitHub: @RemyG</span>
+	</a>
 </div>
 
 </div>
@@ -51,26 +61,25 @@ My personal projects are hosted on:
 
 You can contact me by:
 
-<div class="contact-row">
-	<a class="zocial email icon" href="mailto:remy.gardette@gmail.com">remy.gardette@gmail.com</a>
-	E-mail: <a href="mailto:remy.gardette@gmail.com">remy.gardette@gmail.com</a>
+<div class="row-contact">
+	<a href="mailto:remy-gardette@gmail.com">
+		<img src="{{ '/img/gmail-logo.png' }}" />
+		<span>Email: remy-gardette@gmail.com</span>
+	</a>
 </div>
-
-<div class="contact-row">
-	<button class="zocial call icon">+44 (0) 7429 339096</button>
-	Phone: +44 (0) 7429 339096
+<div class="row-contact">
+	<img src="{{ '/img/phone-logo.png' }}" />
+	<span>Phone: +44 (0) 7429 339096</span>
 </div>
-
-<div class="contact-row">
-	<button class="zocial skype icon">remygardette</button>
-	Skype: remygardette
+<div class="row-contact">
+	<img src="{{ '/img/skype-logo.png' }}" />
+	<span>Skype: remygardette</span>
 </div>
-
-<div class="contact-row">
+<div class="row-contact">
 	<address>
-		<strong>Remy Gardette</strong><br>
-		Flat 3 - 2 Boot Lane<br>
-		BS3 4HX Bristol, UK<br>
+		<strong>Rémy Gardette</strong><br/>
+		Flat 3 - 2 Boot Lane<br/>
+		BS3 4HX Bristol, UK
 	</address>
 </div>
 

@@ -280,3 +280,23 @@ div.row-rss-link {
   #followGithub span {
     position: relative;
     top: 1px; }
+
+div.row-contact {
+  padding-left: 25px;
+  margin-bottom: 5px; }
+  div.row-contact a {
+    text-decoration: none; }
+    div.row-contact a:hover span {
+      text-decoration: underline; }
+  div.row-contact img {
+    display: inline-block;
+    height: 32px;
+    padding-right: 10px; }
+  div.row-contact span {
+    display: inline-block; }
+  div.row-contact address {
+    margin-top: 15px;
+    line-height: 12px; }
+    div.row-contact address p {
+      margin: 0;
+      padding: 0; }

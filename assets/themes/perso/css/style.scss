@@ -364,3 +364,32 @@ div.row-rss-link {
     top: 1px;
   }
 }
+
+div.row-contact {
+  padding-left: 25px;
+  margin-bottom: 5px;
+  a {
+    text-decoration: none;
+    &:hover {
+      span {
+        text-decoration: underline;
+      }
+    }
+  }
+  img {
+    display: inline-block;
+    height: 32px;
+    padding-right: 10px;
+  }
+  span {
+    display: inline-block;
+  }
+  address {
+    margin-top: 15px;
+    line-height: 12px;
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

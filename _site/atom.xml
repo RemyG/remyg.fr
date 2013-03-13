@@ -4,13 +4,73 @@
  <title>Rémy Gardette</title>
  <link href="http://remyg.fr/" rel="self"/>
  <link href="http://remyg.fr"/>
- <updated>2013-03-12T17:05:01+00:00</updated>
+ <updated>2013-03-13T17:11:16+00:00</updated>
  <id>http://remyg.fr</id>
  <author>
    <name>Rémy Gardette</name>
    <email>remy.gardette@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Compress Jekyll website with jekyll-press</title>
+   <link href="http://remyg.fr/2013/03/13/compress-jekyll-website-with-jekyll-press"/>
+   <updated>2013-03-13T00:00:00+00:00</updated>
+   <id>http://remyg.fr/2013/03/13/compress-jekyll-website-with-jekyll-press</id>
+   <content type="html">&lt;p&gt;To compress your output files (from the &lt;code&gt;_site&lt;/code&gt; folder), you can use &lt;a href='https://github.com/stereobooster/jekyll-press'&gt;jekyll-press&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#8217;s very easy to install, configure and enable.&lt;/p&gt;
+
+&lt;h2 id='install_g'&gt;Install g++&lt;/h2&gt;
+
+&lt;p&gt;Install &lt;code&gt;build-essential&lt;/code&gt; and &lt;code&gt;g++&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install build-essential g++&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id='install_the_bundler_gem'&gt;Install the bundler gem&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo gem install bundler&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id='install_jekyllpress'&gt;Install jekyll-press&lt;/h2&gt;
+
+&lt;p&gt;In the root folder of your Jekyll instance, create a file &lt;code&gt;Gemfile&lt;/code&gt;, and add this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;source &amp;#39;https://rubygems.org&amp;#39;
+
+gem &amp;#39;jekyll&amp;#39;
+gem &amp;#39;execjs&amp;#39;
+gem &amp;#39;therubyracer&amp;#39;
+gem &amp;#39;jekyll-press&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then execute:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ bundle&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id='enable_jekyllpress'&gt;Enable jekyll-press&lt;/h2&gt;
+
+&lt;p&gt;Create the following plugin in your project&amp;#8217;s &lt;code&gt;_plugins&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# _plugins/bundler.rb
+require &amp;quot;rubygems&amp;quot;
+require &amp;quot;bundler/setup&amp;quot;
+Bundler.require(:default)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will automatically require all of the gems specified in your Gemfile.&lt;/p&gt;
+
+&lt;h2 id='configure_jekyllpress'&gt;Configure jekyll-press&lt;/h2&gt;
+
+&lt;p&gt;In your &lt;code&gt;_congif.yml&lt;/code&gt; file, add this block:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;jekyll-press:
+  exclude: &amp;#39;atom.xml&amp;#39; # Exclude files from processing - file name, glob pattern or array of file names and glob patterns
+  js_options: {}      # js minifier options
+  css_options: {}     # css minifier options
+  html_options: {}    # html minifier options&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id='enjoy'&gt;Enjoy&lt;/h2&gt;
+
+&lt;p&gt;Next time you rebuild your website, the output files will be compressed.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Install Jekyll on Ubuntu</title>

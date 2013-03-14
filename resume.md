@@ -17,7 +17,7 @@ weight: 3
 </div>
 
 
-## Professional experience
+<h2 id="professional_experience" class="anchor">Professional experience</h2>
 
 <table class="table professional">
 
@@ -25,7 +25,7 @@ weight: 3
 
 </table>
 
-## Education
+<h2 id="education" class="anchor">Education</h2>
 
 <table class="table education">
 	<tr>

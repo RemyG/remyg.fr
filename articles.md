@@ -14,17 +14,13 @@ rss: true
 <article class="post">
 	<header>
 		<div class="row-fluid">
-			<div class="date span10">
-				<span class="valign-middle">
-					<i class="icon-time"> </i>
-					{{ post.date | date:"%Y-%m-%d" }}
-				</span>
+			<div class="span10 date">
+				<i class="icon-time"> </i>
+				{{ post.date | date:"%Y-%m-%d" }}
 			</div>			
 			<div class="span2 comments-heading">
-				<span class="valign-middle">
-					<i class="icon-comment"> </i>
-					<a href="{{post.url}}/#disqus_thread">Comments</a>
-				</span>
+				<i class="icon-comment"> </i>
+				<a href="{{ post.url }}/#disqus_thread">Comments</a>
 			</div>
 		</div>
 		<div class="row-fluid">

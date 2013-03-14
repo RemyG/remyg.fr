@@ -8,7 +8,7 @@ js: [jquery]
 
 <div class="row-fluid">
 
-<div class="span9" markdown="1">
+    <div class="span9" markdown="1">
 
 Hello, and welcome on my home page!
 
@@ -18,26 +18,26 @@ I currently work for [Multicom](http://www.multicom.co.uk/), a software editor, 
 
 You can find on this website my personal information, where to find me on the internet, how to contact me...
 
-</div>
+    </div>
 
-<div class="span3">
-	<img src="{{ '/img/picture.jpeg' }}" class="img-rounded" alt="Rémy Gardette" title="Rémy Gardette">
-</div>
+    <div class="span3">
+    	<img src="{{ '/img/picture.jpeg' }}" class="img-rounded" alt="Rémy Gardette" title="Rémy Gardette">
+    </div>
 
 </div>
 
 <div class="row-fluid">
 
-    <div class="span4">
+    <div class="span4 last-articles">
         <section>
             <h2>Last articles</h2>        
             {% for post in site.posts limit: 5 %}
                 <article>
                     <i class="icon-time"> </i>
                     {{ post.date | date:"%Y-%m-%d" }}
-                    <h4>
+                    <h3>
                         <a title="Permalink to {{ post.title }}" href="{{post.url}}/">{{ post.title }}</a>
-                    </h4>
+                    </h3>
                 </article>
             {% endfor %}
             <p>
@@ -46,7 +46,7 @@ You can find on this website my personal information, where to find me on the in
         </section>
     </div>
 
-    <div class="span4">
+    <div class="span4 last-repositories">
         {% include JB/github %}
         <script type="text/javascript">
         // <!--
@@ -57,15 +57,15 @@ You can find on this website my personal information, where to find me on the in
                 dataType: 'json',
                 success: function(resp) {
                     if (resp.data.length > 0) {
-                        $('#gh_repos').html('<ul></ul>');
+                        $('#gh_repos').html('');
                         for(var i = 0; i < $(resp.data).length && i < {{ site.github.repo_count }}; i++) 
                         {
-                           $('#gh_repos > ul').append(
-                                '<li><a href="' + resp.data[i]['html_url'] + '">'
-                                + resp.data[i]['name'] + '</a>'
+                           $('#gh_repos').append(
+                                '<h3><a href="' + resp.data[i]['html_url'] + '">'
+                                + resp.data[i]['name'] + '</a></h3>'
                                 + '<p>' 
                                 + (resp.data[i]['description'] ? resp.data[i]['description'] : '(No description)') 
-                                + '</p></li>'
+                                + '</p>'
                             );
                         }
                     }
@@ -125,7 +125,7 @@ You can find on this website my personal information, where to find me on the in
                         $('#last_tweets').html('<ul></ul>');
                         $.each(resp, function(i, item) {
                             $("#last_tweets > ul").append("<li>" 
-                                + item.text.linkify() 
+                                + '<div class="tweet-content">' + item.text.linkify() + '</div>'
                                 + " <span class='created_at'>" 
                                 + relative_time(item.created_at) 
                                 + " via " 

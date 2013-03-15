@@ -25,11 +25,11 @@ You can also clone the project with Git by running:
 
 The different scripts present in this project are:
 
-* [LinkedInScraper](#linkedinscraper) - Scrape a resume from LinkedIn.
+* [LinkedIn Scraper](#linkedinscraper) - Scrape a resume from LinkedIn.
 * [MySqlBackup](#mysqlbackup) - Backup a whole MySql database
     
 
-## <a id="linkedinscraper"> </a>LinkedInScraper
+<h2 id="linkedinscraper" class="anchor">LinkedIn Scraper</h2>
 
 This script is used to scrape a resume from LinkedIn, and create an XML file with the results.
 
@@ -46,22 +46,24 @@ To scrape a resume from LinkedIn, you just need to call the method `scrapeResume
 
 The resulting XML file will have the format:
 
-    <?xml version="1.0" encoding="UTF-8"?>
-    <resume>
-      <position>
-        <title>position title</title>
-        <company>company</company>
-        <location>location</location>
-        <from>from date</from>
-        <to>to date</to>
-        <description>description</description>
-      </position>
-      <position>
-      ...
-      </position>
-    </resume>
+{% highlight xml %}
+<?xml version="1.0" encoding="UTF-8"?>
+<resume>
+  <position>
+    <title>position title</title>
+    <company>company</company>
+    <location>location</location>
+    <from>from date</from>
+    <to>to date</to>
+    <description>description</description>
+  </position>
+  <position>
+  ...
+  </position>
+</resume>
+{% endhighlight %}
 
-## <a id="mysqlbackup"> </a>MySqlBackup
+<h2 id="mysqlbackup" class="anchor">MySqlBackup</h2>
 
 This script is used to back up a MySql database (or just a table).
 
@@ -71,6 +73,14 @@ The script in ran by calling the function `backup_tables($hostname, $username, $
     
 The back up is saved in a temporary file `db-backup-YYYYMMDD-HHmmss.sql` and then compressed in a file `db-backup-YYYYMMDD-HHmmss.tar.gz`.
 
-## Author and license
+## License
 
-Released under the MIT License by [Remy Gardette](http://remyg.fr/en).
+These scripts are released under the MIT License:
+
+Copyright (c) 2013 Rémy Gardette
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

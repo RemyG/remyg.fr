@@ -122,15 +122,15 @@ You can find on this website my personal information, where to find me on the in
                 dataType: 'json',
                 success: function(resp) {
                     if (resp.length > 0) {
-                        $('#last_tweets').html('<ul></ul>');
+                        $('#last_tweets').html('');
                         $.each(resp, function(i, item) {
-                            $("#last_tweets > ul").append("<li>" 
-                                + '<div class="tweet-content">' + item.text.linkify() + '</div>'
-                                + " <span class='created_at'>" 
+                            $("#last_tweets").append(
+                                '<div class="tweet-content">' + item.text.linkify() + '</div>'
+                                + "<div class='tweet-info'>" 
                                 + relative_time(item.created_at) 
                                 + " via " 
                                 + item.source
-                                + "</span></li>");
+                                + "</div>");
                         });
                     }
                     else {

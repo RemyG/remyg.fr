@@ -80,10 +80,11 @@
 }
 
 body {
+  background: url(/img/cream_dust.png) repeat 0 0;
   padding-top: 50px;
   @media (max-width: 979px) {
     padding-top: 0;
-  }
+  }  
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -106,6 +107,14 @@ h1, h2, h3, h4, h5, h6 {
       margin:-50px 0 0; 
     }
   }
+}
+
+i.icon-large, i.icon-xlarge, i.icon-2x {
+  vertical-align: middle;
+}
+
+i.icon-xlarge:before {
+  font-size: 1.8em;  
 }
 
 div.content {
@@ -141,7 +150,20 @@ div.last-repositories {
 }
 
 div.tweet-content {
-  
+  border: 1px solid #d4d4d4;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 5px;
+}
+div.tweet-info {
+  margin-bottom: 15px;
+  padding-left: 20px;
+}
+
+pre {
+  line-height: 1.2em;
 }
 
 header.project-downloads {
@@ -345,6 +367,7 @@ div.row-rss-link {
   color: #333333;
   font: 11px sans-serif;
   margin: 0;
+  margin-top: 10px;
   outline: medium none;
   overflow: visible;
   padding: 0.5em 1em;
@@ -357,13 +380,6 @@ div.row-rss-link {
     background-image: linear-gradient(#599BDC, #3072B3);
     border-color: #3072B3 #3072B3 #2A65A0;
     text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
-    img {
-      -webkit-filter: brightness(100%);
-      filter: brightness(100%);
-    }
-    span {
-
-    }
   }
   img { 
     position: relative;

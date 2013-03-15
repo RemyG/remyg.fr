@@ -19,7 +19,7 @@ rss: true
 				{{ post.date | date:"%Y-%m-%d" }}
 			</div>			
 			<div class="span2 comments-heading">
-				<i class="icon-comment"> </i>
+				<i class="icon-comments"> </i>
 				<a href="{{ post.url }}/#disqus_thread">Comments</a>
 			</div>
 		</div>

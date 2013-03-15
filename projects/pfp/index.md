@@ -67,7 +67,9 @@ When PFP loads files it assumes they are in the corresponding folders. So make s
         
 We encourage you to use the "static" folder in the root to store you static resource files (CSS, JS etc) however you can put them anywhere. You can also use the `BASE_URL` variable to help include files in your HTML. For example:
 
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>static/css/style.css" type="text/css" media="screen" />
+{% highlight html+php %}
+<link rel="stylesheet" href="<?php echo BASE_URL; ?>static/css/style.css" type="text/css" media="screen" />
+{% endhighlight %}
         
 ### Naming Conventions
 
@@ -88,45 +90,43 @@ Controllers are the driving force of a PFP application. As you can see from the 
     example.com/auth/login
         
 ...would map to the following Controller with the filename `auth.php`:
-        
-    <?php
 
-        class Auth extends Controller {
-
-            function index()
-            {
-                // This is the default function 
-                // (i.e. no function is set in the URL)
-            }
-            
-            function login()
-            {
-                echo 'Hello World!';
-            }
-
+{% highlight php %}
+<?php
+    class Auth extends Controller
+    {
+        function index()
+        {
+            // This is the default function 
+            // (i.e. no function is set in the URL)
         }
-
-    ?>
+        
+        function login()
+        {
+            echo 'Hello World!';
+        }
+    }
+?>
+{% endhighlight %}
 
 ...and the output would be "Hello World!".
         
 The default controller and error controller can be set in `application/config/config.php`
         
 Note that if you need to declare a contructor you must also call the parent constructor like:
-        
-    <?php
 
-        class Example extends Controller {
-
-            public function __construct()
-            {
-                parent::__construct();
-                // Your own constructor code
-            }
-
+{% highlight php %}
+<?php
+    class Example extends Controller
+    {
+        public function __construct()
+        {
+            parent::__construct();
+            // Your own constructor code
         }
-
-    ?>
+    }
+?>
+{% endhighlight %}
 
 There are several helper functions that can also be used in controllers. Most of these functions take the parameter `$name` of the corresponding class:
 
@@ -136,7 +136,11 @@ There are several helper functions that can also be used in controllers. Most of
 * `loadHelper($name)` - Load a helper
 * `redirect($location)` - Redirect to a page without having to include the base URL. E.g:
 
-        $this->redirect('some_class/some_function');
+{% highlight php %}
+<?php
+    $this->redirect('some_class/some_function');
+?>
+{% endhighlight %}
 
 ### Views
 
@@ -144,57 +148,70 @@ This version of PFP automatically appends a header and a footer to every view. T
 
 Usually, the header will look like:
 
-    <html>
-      <head>
-        <title>My Site</title>
-      </head>
-      <body>
+{% highlight html %}
+<html>
+  <head>
+    <title>My Site</title>
+  </head>
+  <body>
+{% endhighlight %}
 
 And the footer:
 
-      </body>
-    </html>
+{% highlight html %}
+  </body>
+</html>
+{% endhighlight %}
 
 This means that the views usually contain the "content section" of a page. Views are almost always loaded by [Controllers](#controllers). So for example if you had a view called `main_view.php` that contained the following HTML:
-        
-    <h1>Welcome to my Site!</h1>
+
+{% highlight html %}
+<h1>Welcome to my Site!</h1>
+{% endhighlight %}
 
 ... you would load it in a controller by doing the following:
-        
-    <?php
 
-        class Main extends Controller {
-
-            function index()
-            {
-                $template = $this->loadView('main_view');
-                $template->render();
-            }
-            
+{% highlight php %}
+<?php
+    class Main extends Controller
+    {
+        function index()
+        {
+            $template = $this->loadView('main_view');
+            $template->render();
         }
-
-    ?>
+    }
+?>
+{% endhighlight %}
 
 The resulting HTML page would then be:
 
-    <html>
-      <head>
-        <title>My Site</title>
-      </head>
-      <body>
-        <h1>Welcome to my Site!</h1>
-      </body>
-    </html>
+{% highlight html %}
+<html>
+  <head>
+    <title>My Site</title>
+  </head>
+  <body>
+    <h1>Welcome to my Site!</h1>
+  </body>
+</html>
+{% endhighlight %}
 
 The View class has a helper function called `set($key, $val)` that allows you to pass variables from the Controller to the View.
-        
+
+{% highlight php %}
+<?php
     $template = $this->loadView('main_view');
     $template->set('someval', 200);
     $template->render();
+?>
+{% endhighlight %}
 
 ...then in the view you could do:
-        
-    <?php echo $someval; ?>
+
+{% highlight php %}
+<?php echo $someval; ?>
+{% endhighlight %}
         
 ...and the output would be `200`. Any kind of PHP variable can be passed to a view in this way.
         
@@ -203,46 +220,54 @@ The View class has a helper function called `set($key, $val)` that allows you to
 In PFP models are classes whose sole responsiblity it is to deal with data (usually from a database).
 
 For example:
-        
-    <?php
 
-        class Example_model extends Model {
-
-            public function getSomething($id)
+{% highlight php %}
+<?php
+    class Example_model extends Model
+    {
+        public function getSomething($id)
+        {
+            $stmt = $this->prepareStatement('
+              SELECT *
+              FROM something
+              WHERE id = ?');
+            $stmt->bindValue(1, $id, PDO::PARAM_INT);
+            $result = $this->executeStatement($stmt);
+            if(count($result) == 1)
             {
-                $stmt = $this->prepareStatement('
-                  SELECT *
-                  FROM something
-                  WHERE id = ?');
-                $stmt->bindValue(1, $id, PDO::PARAM_INT);
-                $result = $this->executeStatement($stmt);
-                if(count($result) == 1) {
-                  return $result[0];
-                }
-                return null;
+              return $result[0];
             }
-
+            return null;
         }
-
-    ?>
+    }
+?>
+{% endhighlight %}
         
 ...then in a controller you would do:
-        
+
+{% highlight php %}
+<?php
     function index()
     {
         $example = $this->loadModel('Example_model');
         $something = $example->getSomething($id);
-        
+
         $template = $this->loadView('main_view');
         $template->set('someval', $something);
         $template->render();
     }
+?>
+{% endhighlight %}
 
 Now the results of your database query would be available in your view in `$someval`. Note that in the above code there are no steps to connect to the database. That is because this is done automatically. For this to work you must provide your database details in `config.php`:
-        
+
+{% highlight php %}
+<?php
     define('DB_DSN', 'mysql:dbname=test;host=localhost'); // Database DSN
     define('DB_USERNAME', ''); // Database username
     define('DB_PASSWORD', ''); // Database password
+?>
+{% endhighlight %}
 
 There are several helper functions that can also be used in models:
 

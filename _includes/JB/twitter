@@ -2,12 +2,12 @@
 	<section>
 		<h2>Last tweets</h2>
 		<div id="last_tweets">
-			<p>Updating...</p>
+			<p><i class="icon-spinner icon-spin"> </i> Updating...</p>
 		</div>
 		{% if site.twitter.show_profile_link %}
 			<a href="https://twitter.com/{{site.twitter.user}}"
 				title="Follow {{site.twitter.user}} on Twitter" id="followTwitter" class="noBg">
-				<img src="{{ '/img/twitter.png' }}" />
+				<i class="icon-twitter icon-large"> </i>
 				<span>Follow me on Twitter</span>
 			</a>
 		{% endif %}

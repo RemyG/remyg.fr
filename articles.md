@@ -5,6 +5,7 @@ header : Articles
 group: navigation
 weight: 1
 flattrable: false
+colorcategory: dev
 rss: true
 ---
 {% include JB/setup %}

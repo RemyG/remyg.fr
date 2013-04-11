@@ -6,11 +6,9 @@ description: ""
 {% include JB/setup %}
 
 <header class="project-downloads">
-  <ul>
-    <li><a href="https://github.com/RemyG/RGWordstrap/zipball/master">Download <strong>ZIP File</strong></a></li>
-    <li><a href="https://github.com/RemyG/RGWordstrap/tarball/master">Download <strong>TAR Ball</strong></a></li>
-    <li><a href="https://github.com/RemyG/RGWordstrap">View On <strong>GitHub</strong></a></li>
-  </ul>
+    <div><a href="https://github.com/RemyG/RGWordstrap/zipball/master">Download <strong>ZIP File</strong></a></div>
+    <div><a href="https://github.com/RemyG/RGWordstrap/tarball/master">Download <strong>TAR Ball</strong></a></div>
+    <div><a href="https://github.com/RemyG/RGWordstrap">View On <strong>GitHub</strong></a></div>
 </header>
 
 This project is a responsive Wordpress theme based on Twitter Bootstrap. I've created this theme to standardize the aspect of my [personnal website](http://remyg.fr) on Jekyll and my [Wordpress blog](http://blog.remyg.fr).

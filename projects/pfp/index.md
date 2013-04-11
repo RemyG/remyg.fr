@@ -8,11 +8,15 @@ categories: [Project]
 {% include JB/setup %}
 
 <header class="project-downloads">
-	<ul>
-		<li><a href="https://github.com/RemyG/PFP/zipball/master">Download <strong>ZIP File</strong></a></li>
-		<li><a href="https://github.com/RemyG/PFP/tarball/master">Download <strong>TAR Ball</strong></a></li>
-		<li><a href="https://github.com/RemyG/PFP">View On <strong>GitHub</strong></a></li>
-	</ul>
+    <div>
+        <a href="https://github.com/RemyG/PFP/zipball/master">Download <strong>ZIP File</strong></a>
+    </div>
+    <div>
+        <a href="https://github.com/RemyG/PFP/tarball/master">Download <strong>TAR Ball</strong></a>
+    </div>
+    <div>        
+        <a href="https://github.com/RemyG/PFP">View On <strong>GitHub</strong></a>
+    </div>
 </header>
 
 PFP is a tiny PHP application framework built for people who use a LAMP stack. PFP aims to be as simple as possible to set up and use.
@@ -30,7 +34,7 @@ This version is a fork of the original PIP project by [Gilbert Pellegrom](http:/
 
 You can download the latest version of PFP in either [zip](https://github.com/RemyG/PFP/zipball/master) or [tar](https://github.com/RemyG/PFP/tarball/master) formats.
 
-You can also clone the project with [Gittoto](http://git-scm.com) by running:
+You can also clone the project with [Git](http://git-scm.com) by running:
 
     $ git clone https://github.com/RemyG/PFP.git
 

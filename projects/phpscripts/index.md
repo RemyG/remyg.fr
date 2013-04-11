@@ -6,11 +6,9 @@ description: "Misc. PHP scripts"
 {% include JB/setup %}
 
 <header class="project-downloads">
-  <ul>
-    <li><a href="https://github.com/RemyG/PHPScripts/zipball/master">Download <strong>ZIP File</strong></a></li>
-    <li><a href="https://github.com/RemyG/PHPScripts/tarball/master">Download <strong>TAR Ball</strong></a></li>
-    <li><a href="https://github.com/RemyG/PHPScripts">View On <strong>GitHub</strong></a></li>
-  </ul>
+    <div><a href="https://github.com/RemyG/PHPScripts/zipball/master">Download <strong>ZIP File</strong></a></div>
+    <div><a href="https://github.com/RemyG/PHPScripts/tarball/master">Download <strong>TAR Ball</strong></a></div>
+    <div><a href="https://github.com/RemyG/PHPScripts">View On <strong>GitHub</strong></a></div>
 </header>
 
 This project regroups several PHP scripts that I've written for my personal use. In case somebody wants to use them, I've put them on GitHub, under an MIT license.

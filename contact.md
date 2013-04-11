@@ -4,6 +4,7 @@ title: "Contact"
 header: "How to contact me"
 group: navigation
 weight: 5
+colorcategory: misc
 css: [zocial]
 ---
 {% include JB/setup %}

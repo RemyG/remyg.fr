@@ -6,11 +6,9 @@ description: ""
 {% include JB/setup %}
 
 <header class="project-downloads">
-  <ul>
-    <li><a href="https://github.com/RemyG/wordpress-rgresponsive/zipball/master">Download <strong>ZIP File</strong></a></li>
-    <li><a href="https://github.com/RemyG/wordpress-rgresponsive/tarball/master">Download <strong>TAR Ball</strong></a></li>
-    <li><a href="https://github.com/RemyG/wordpress-rgresponsive">View On <strong>GitHub</strong></a></li>
-  </ul>
+    <div><a href="https://github.com/RemyG/wordpress-rgresponsive/zipball/master">Download <strong>ZIP File</strong></a></div>
+    <div><a href="https://github.com/RemyG/wordpress-rgresponsive/tarball/master">Download <strong>TAR Ball</strong></a></div>
+    <div><a href="https://github.com/RemyG/wordpress-rgresponsive">View On <strong>GitHub</strong></a></div>
 </header>
 
 This project is a responsive Wordpress theme. I've started to work on this because I wanted to standardize the general aspect of my different websites ([my blog](http://blog.remyg.fr) and [the blog of my developments](github.remyg.fr)).

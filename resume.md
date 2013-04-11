@@ -3,6 +3,7 @@ layout: page
 title: "Resume"
 header: "My resume"
 group: navigation
+colorcategory: pro
 weight: 3
 ---
 {% include JB/setup %}

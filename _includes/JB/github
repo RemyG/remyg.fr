@@ -8,7 +8,7 @@
 			<a href="https://github.com/{{site.github.user}}"
 				title="Follow {{site.github.user}} on Github" id="followGithub" class="noBg">
 				<i class="icon-github icon-xlarge"> </i>
-				<span>Follow me on Github</span>
+				<span>Follow me on <strong>Github</strong></span>
 			</a>
 		{% endif %}
 	</section>

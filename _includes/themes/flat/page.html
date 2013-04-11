@@ -1,0 +1,51 @@
+<div class="container">
+
+<div class="page-header">
+	<div class="row-fluid">
+		{% if page.rss == true %}  
+			<div class="span9">
+				{% if page.header %}
+					<h1>{{ page.header }} {% if page.tagline %} <small> - {{ page.tagline }}</small>{% endif %}</h1>
+				{% else %}
+					<h1>{{ page.title }} {% if page.tagline %} <small> - {{ page.tagline }}</small>{% endif %}</h1>
+				{% endif %}	
+			</div>
+			<div class="span3 rss-div">
+				<a href="rss.xml"><i class="icon-rss"> </i> Get the RSS feed</a>
+			</div>
+		{% elsif page.flattrable == false %}
+			<div class="span12">
+				{% if page.header %}
+					<h1>{{ page.header }} {% if page.tagline %} <small> - {{ page.tagline }}</small>{% endif %}</h1>
+				{% else %}
+					<h1>{{ page.title }} {% if page.tagline %} <small> - {{ page.tagline }}</small>{% endif %}</h1>
+				{% endif %}				
+			</div>
+		{% else %}  
+			<div class="span9">
+				{% if page.header %}
+					<h1>{{ page.header }} {% if page.tagline %} <small> - {{ page.tagline }}</small>{% endif %}</h1>
+				{% else %}
+					<h1>{{ page.title }} {% if page.tagline %} <small> - {{ page.tagline }}</small>{% endif %}</h1>
+				{% endif %}	
+			</div>
+			<div class="span3 flattr-div">
+				<a class="FlattrButton" 
+					href="http://remyg.fr{{ page.url }}" 
+					title="{{ page.title }}" 
+					rel="flattr;tags:blog;"></a>
+			</div>
+		{% endif %}
+	</div>
+</div>
+
+<div class="row-fluid">
+	<div class="span12">
+		{{ content }}
+	</div>
+</div>
+
+ <hr>
+{% include JB/comments %}
+
+</div>

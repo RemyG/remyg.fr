@@ -8,7 +8,7 @@
 			<a href="https://twitter.com/{{site.twitter.user}}"
 				title="Follow {{site.twitter.user}} on Twitter" id="followTwitter" class="noBg">
 				<i class="icon-twitter icon-large"> </i>
-				<span>Follow me on Twitter</span>
+				<span>Follow me on <strong>Twitter</strong></span>
 			</a>
 		{% endif %}
 	</section>

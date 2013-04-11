@@ -7,24 +7,84 @@ js: [jquery]
 {% include JB/setup %}
 
 <div class="row-fluid">
-
-    <div class="span9" markdown="1">
-
-Hello, and welcome on my home page!
-
-I am a **software engineer**, since I graduated from the [INSA Lyon](http://www.insa-lyon.fr/en), one of the most prestigious French engineering universities, in July 2009.
-
-I currently work for [Multicom](http://www.multicom.co.uk/), a software editor, in Bristol (UK).
-
-You can find on this website my personal information, where to find me on the internet, how to contact me...
-
+    <div class="span3 main-box dev" data-href="http://blog.remyg.fr">
+        <header>
+            Blog
+        </header>
+        <div class="desc">
+            My blog
+        </div>
     </div>
-
-    <div class="span3">
-    	<img src="{{ '/img/picture.jpeg' }}" class="img-rounded" alt="Rémy Gardette" title="Rémy Gardette">
+    <div class="span3 main-box dev" data-href="articles.html">
+        <header>
+            Articles
+        </header>
+        <div class="desc">
+            Articles on my development work
+        </div>
     </div>
-
+    <div class="span3 main-box dev" data-href="projects/index.html">
+        <header>
+            Projects
+        </header>
+        <div class="desc">
+            <span>My personal projects</span>
+        </div>
+    </div>
+    <div class="span3 main-box pro" data-href="resume.html">
+        <header>
+            Resume
+        </header>
+        <div class="desc">
+            My resume
+        </div>
+    </div>    
 </div>
+
+<div class="row-fluid">
+    <div class="span3 main-box pro" data-href="skills.html">
+        <header>
+            Skills
+        </header>
+        <div class="desc">
+            My IT skills
+        </div>
+    </div>
+    <div class="span3 main-box misc" data-href="contact.html">
+        <header>
+            Contact
+        </header>
+        <div class="desc">
+            How to contact me
+        </div>
+    </div>
+    <div class="span3 main-box misc" data-href="about.html">
+        <header>
+            About
+        </header>
+        <div class="desc">
+            About me
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+// <!--
+$('.main-box').click(function() {
+    window.location.href = $(this).data('href');
+});
+
+$('.main-box').hover(
+    function () {
+        $(this).find('.desc').slideDown(300);
+    },
+    function () {
+        $(this).find('.desc').slideUp(200);
+    }
+);
+// -->
+</script>
 
 <div class="row-fluid">
 
@@ -32,11 +92,11 @@ You can find on this website my personal information, where to find me on the in
         <section>
             <h2>Last articles</h2>        
             {% for post in site.posts limit: 5 %}
-                <article>
-                    <i class="icon-time"> </i>
-                    {{ post.date | date:"%Y-%m-%d" }}
-                    <h3>
+                <article>                    
+                    <h3 class="home-small-title">
                         <a title="Permalink to {{ post.title }}" href="{{post.url}}/">{{ post.title }}</a>
+                        <small><i class="icon-time"> </i>
+                        {{ post.date | date:"%Y-%m-%d" }}</small>
                     </h3>
                 </article>
             {% endfor %}
@@ -61,7 +121,7 @@ You can find on this website my personal information, where to find me on the in
                         for(var i = 0; i < $(resp.data).length && i < {{ site.github.repo_count }}; i++) 
                         {
                            $('#gh_repos').append(
-                                '<h3><a href="' + resp.data[i]['html_url'] + '">'
+                                '<h3 class="home-small-title"><a href="' + resp.data[i]['html_url'] + '">'
                                 + resp.data[i]['name'] + '</a></h3>'
                                 + '<p>' 
                                 + (resp.data[i]['description'] ? resp.data[i]['description'] : '(No description)') 

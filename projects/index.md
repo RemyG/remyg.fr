@@ -4,68 +4,99 @@ title: "Projects"
 header: "My personnal projects"
 group: navigation
 colorcategory: dev
+js: [jquery]
 weight: 2
 ---
 {% include JB/setup %}
 
-This page regroups my projects:
+This page regroups the projects I work on in my free time.
 
 {% comment %}
 {% include projects_en.html %}
 {% endcomment %}
 
 <div class="row-fluid">
-	<div class="span4 box-project">
+	<div class="span4 box-project" data-href="{{ HOME_PATH }}projects/rss-reader/">
 		<header>
-			<h1><a href="{{ HOME_PATH }}projects/pfp/">PFP - PHP Framework</a></h1>
+			<h1>RSS Reader</h1>
+			<div class="description">Self-hosted RSS agregator and reader</div>
+		</header>
+		<div class="link">&rarr; See project page</div>
+	</div>
+	<div class="span4 box-project" data-href="{{ HOME_PATH }}projects/pfp/">
+		<header>
+			<h1>PFP - PHP Framework</h1>
 			<div class="description">Tiny PHP MVC framework</div>
 		</header>
-		<div class="link"><a href="{{ HOME_PATH }}projects/pfp/">&rarr; PFP - PHP Framework</a></div>
+		<div class="link">&rarr; See project page</div>
 	</div>
-	<div class="span4 box-project">
+	<div class="span4 box-project" data-href="{{ HOME_PATH }}projects/rgwordstrap/">
 		<header>
-			<h1><a href="{{ HOME_PATH }}projects/rgwordstrap/">RGWordstrap</a></h1>
+			<h1>RGWordstrap</h1>
 			<div class="description">Responsive theme for Wordpress, based on Twitter Bootstrap</div>
 		</header>
-		<div class="link"><a href="{{ HOME_PATH }}projects/rgwordstrap/">&rarr; RGWordstrap</a></div>
-	</div>
-	<div class="span4 box-project">
+		<div class="link">&rarr; See project page</div>
+	</div>	
+</div>
+<div class="row-fluid">
+	<div class="span4 box-project" data-href="{{ HOME_PATH }}projects/rgresponsive/">
 		<header>
-			<h1><a href="{{ HOME_PATH }}projects/rgresponsive/">RGResponsive</a></h1>
+			<h1>RGResponsive</h1>
 			<div class="description">Responsive theme for Wordpress</div>
 		</header>
-		<div class="link"><a href="{{ HOME_PATH }}projects/rgresponsive/">&rarr; RGResponsive</a></div>
+		<div class="link">&rarr; See project page</div>
 	</div>
-</div>
-<div class="row-fluid">
-	<div class="span4 box-project">
+	<div class="span4 box-project" data-href="http://mybooks.remyg.fr/home">
 		<header>
-			<h1><a href="http://mybooks.remyg.fr/home">My Books</a></h1>
+			<h1>My Books</h1>
 			<div class="description">Social literature website (reviews, collections, forums...)</div>
 		</header>
-		<div class="link"><a href="http://mybooks.remyg.fr/home">&rarr; My Books</a></div>
+		<div class="link">&rarr; Go to website</div>
 	</div>
-	<div class="span4 box-project">
+	<div class="span4 box-project" data-href="{{ HOME_PATH }}projects/formcreator">
 		<header>
-			<h1><a href="{{ HOME_PATH }}projects/formcreator">Form Creator</a></h1>
+			<h1>Form Creator</h1>
 			<div class="description">Small web-app allowing you to automatically generate HTML forms with hidden fields, based on a list of names / values.</div>
 		</header>
-		<div class="link"><a href="{{ HOME_PATH }}projects/formcreator">&rarr; Form Creator</a></div>
-	</div>
-	<div class="span4 box-project">
-		<header>
-			<h1><a href="https://github.com/RemyG/PythonScripts">Python Scripts</a></h1>
-			<div class="description">Misc. Python scripts (retrieval of professional experience from LinkedIn,...)</div>
-		</header>
-		<div class="link"><a href="https://github.com/RemyG/PythonScripts">&rarr; Python Scripts</a></div>
-	</div>
+		<div class="link">&rarr; See project page</div>
+	</div>	
 </div>
 <div class="row-fluid">
-	<div class="span4 box-project">
+	<div class="span4 box-project" data-href="{{ HOME_PATH }}projects/phpscripts/">
 		<header>
-			<h1><a href="{{ HOME_PATH }}projects/phpscripts/">PHP Scripts</a></h1>
+			<h1>PHP Scripts</h1>
 			<div class="description">Misc. PHP scripts (retrieval of professional experience from LinkedIn,...)</div>
 		</header>
-		<div class="link"><a href="{{ HOME_PATH }}projects/phpscripts/">&rarr; PHP Scripts</a></div>
+		<div class="link">&rarr; See project page</div>
+	</div>
+	<div class="span4 box-project" data-href="https://github.com/RemyG/PythonScripts">
+		<header>
+			<h1>Python Scripts</h1>
+			<div class="description">Misc. Python scripts (retrieval of professional experience from LinkedIn,...)</div>
+		</header>
+		<div class="link">&rarr; See project on GitHub</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	var i = 0;
+	$('.box-project').each(function() {
+		//$(this).addClass('color-' + Math.round(Math.random()*5));
+		$(this).addClass('color-' + i);
+		i = i + 1;
+		i = i % 6;
+	});
+});
+$('.box-project').click(function() {
+    window.location.href = $(this).data('href');
+});
+$('.box-project').hover(
+    function () {
+        $(this).find('.link').slideDown(300);
+    },
+    function () {
+        $(this).find('.link').slideUp(200);
+    }
+);
+</script>

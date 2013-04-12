@@ -8,11 +8,9 @@ categories: [Project]
 {% include JB/setup %}
 
 <header class="project-downloads">
-  <ul>
-    <li><a href="https://github.com/RemyG/FormCreator/zipball/master">Download <strong>ZIP File</strong></a></li>
-    <li><a href="https://github.com/RemyG/FormCreator/tarball/master">Download <strong>TAR Ball</strong></a></li>
-    <li><a href="https://github.com/RemyG/FormCreator">View on <strong>GitHub</strong></a></li>
-  </ul>
+  <div><a href="https://github.com/RemyG/FormCreator/zipball/master">Download <strong>ZIP File</strong></a></div>
+  <div><a href="https://github.com/RemyG/FormCreator/tarball/master">Download <strong>TAR Ball</strong></a></div>
+  <div><a href="https://github.com/RemyG/FormCreator">View on <strong>GitHub</strong></a></div>
 </header>
 
 This project is an HTML/Javascript application, meant to be used as a development help.

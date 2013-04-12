@@ -8,15 +8,9 @@ categories: [Project]
 {% include JB/setup %}
 
 <header class="project-downloads">
-    <div>
-        <a href="https://github.com/RemyG/PFP/zipball/master">Download <strong>ZIP File</strong></a>
-    </div>
-    <div>
-        <a href="https://github.com/RemyG/PFP/tarball/master">Download <strong>TAR Ball</strong></a>
-    </div>
-    <div>        
-        <a href="https://github.com/RemyG/PFP">View On <strong>GitHub</strong></a>
-    </div>
+    <div><a href="https://github.com/RemyG/PFP/zipball/master">Download <strong>ZIP File</strong></a></div>
+    <div><a href="https://github.com/RemyG/PFP/tarball/master">Download <strong>TAR Ball</strong></a></div>
+    <div><a href="https://github.com/RemyG/PFP">View On <strong>GitHub</strong></a></div>
 </header>
 
 PFP is a tiny PHP application framework built for people who use a LAMP stack. PFP aims to be as simple as possible to set up and use.

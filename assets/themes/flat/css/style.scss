@@ -101,7 +101,7 @@ p, div {
     font-family: $body-font;
 }
 
-h1, h2 { 
+h1 { 
     text-shadow: 1px 1px 1px #ccc;
     small {
       text-shadow: none;
@@ -125,6 +125,10 @@ i.icon-large, i.icon-xlarge, i.icon-2x {
 
 i.icon-xlarge:before {
   font-size: 1.8em;  
+}
+
+a {
+  text-decoration: none;
 }
 
 /*div.content {
@@ -233,7 +237,8 @@ div.navbar {
     }
     a.brand {
       font-family: $title-font;
-      font-size: 1.4em;
+      font-size: 1.3em;
+      line-height: 0.9em;
     }
     ul {
       a {        
@@ -330,25 +335,7 @@ article.post {
   }
 }
 
-div.box-project {
-  height: 200px;
-  header {  
-    h1 {
-      font-size: 2em;
-      a {
 
-      }
-    }
-    div.description {
-
-    }
-  }
-  div.link {
-    a {
-
-    }
-  }
-}
 
 div.comments-heading {
   text-align: right;
@@ -424,7 +411,7 @@ header.project-downloads {
   line-height: 3em;
   &:hover {
     color: #fff;
-    background: #2E96FF;
+    background: #579AA9;
   }
   span {
     position: relative;
@@ -489,7 +476,7 @@ div.main-box {
   }
   header {
     padding-top: 30px;
-    font-size: 1.2em;
+    font-size: 1.4em;
     font-weight: bold;
     text-align: center;
     font-family: $title-font;
@@ -505,5 +492,58 @@ div.main-box {
     right: 0;
     background-color: rgba(0,0,0,0.4);
     color: white;
+  }
+}
+
+$project-color-0: $box-bg-dev;
+$project-color-1: $box-bg-pro;
+$project-color-2: $box-bg-misc;
+$project-color-3: #e76e66;
+$project-color-4: #DDA56C;
+$project-color-5: #8C5E7A;
+
+
+div.box-project {
+  position: relative;
+  min-height: 200px !important;
+  cursor: pointer;
+  color: white;
+  margin-bottom: 20px;
+  &.color-0 {
+    background-color: $box-bg-dev;
+  }
+  &.color-1 {
+    background-color: $box-bg-pro;
+  }
+  &.color-2 {
+    background-color: $box-bg-misc;
+  }
+  &.color-3 {
+    background-color: $project-color-3;
+  }
+  &.color-4 {
+    background-color: $project-color-4;
+  }
+  &.color-5 {
+    background-color: $project-color-5;
+  }
+  header {  
+    h1 {
+      font-size: 2em;
+      padding: 15px 10px;
+      text-shadow: none;
+    }
+    div.description {
+      padding: 10px 10px;
+    }
+  }
+  div.link {
+    display: none;
+    padding: 15px 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.7);
   }
 }

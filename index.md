@@ -91,7 +91,7 @@ $('.main-box').hover(
     <div class="span4 last-articles">
         <section>
             <h2>Last articles</h2>        
-            {% for post in site.posts limit: 5 %}
+            {% for post in site.posts limit: 7 %}
                 <article>                    
                     <h3 class="home-small-title">
                         <a title="Permalink to {{ post.title }}" href="{{post.url}}/">{{ post.title }}</a>

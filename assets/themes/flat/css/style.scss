@@ -44,6 +44,10 @@ $body-font: 'Gudea', sans-serif;;
   margin: 0;
   overflow: hidden; 
   display: inline-block;
+  li:first-child {
+    margin: 0;
+    padding: 0;
+  }
   /*float: left;*/}
 
 .tag_box li {
@@ -210,17 +214,33 @@ header.project-downloads {
   }
 }
 
-div.page-header {
-  div.flattr-div,
-  div.rss-div {
-    text-align: right;
+article.post-list {
+  div.post-title {
+    div.date {
+      margin-top: 25px;
+    }
   }
 }
 
 div.flattr-div,
 div.rss-div {
-  margin-top: 22px;
-  margin-bottom: 10px;
+  margin-top: 3px;
+}
+
+div.post-title {
+  div.flattr-div,
+  div.rss-div {
+    margin-top: 25px;
+  }
+}
+
+div.page-header {
+  div.flattr-div,
+  div.rss-div {
+    text-align: right;
+    margin-top: 25px;
+    margin-bottom: 10px;
+  }
 }
 
 div.navbar {
@@ -238,7 +258,7 @@ div.navbar {
     a.brand {
       font-family: $title-font;
       font-size: 1.3em;
-      line-height: 0.9em;
+      line-height: 1em;
     }
     ul {
       a {        
@@ -338,7 +358,9 @@ article.post {
 
 
 div.comments-heading {
-  text-align: right;
+  a {
+    padding-left: 5px;
+  }
 }
 
 .valign-middle {

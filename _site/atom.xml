@@ -4,13 +4,29 @@
  <title>Rémy Gardette</title>
  <link href="http://remyg.fr/" rel="self"/>
  <link href="http://remyg.fr"/>
- <updated>2013-04-12T16:39:46+01:00</updated>
+ <updated>2013-04-15T13:34:13+01:00</updated>
  <id>http://remyg.fr</id>
  <author>
    <name>Rémy Gardette</name>
    <email>remy.gardette@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>RSS Reader</title>
+   <link href="http://remyg.fr/2013/04/15/rss-reader-a-self-hosted-rss-agregator-and-reader"/>
+   <updated>2013-04-15T00:00:00+01:00</updated>
+   <id>http://remyg.fr/2013/04/15/rss-reader-a-self-hosted-rss-agregator-and-reader</id>
+   <content type="html">&lt;p&gt;A few weeks ago, Google announced they would stop their service &lt;a href='https://www.google.com/reader/'&gt;Google Reader&lt;/a&gt; on July 1, 2013 (&lt;a href='http://googleblog.blogspot.co.uk/2013/03/a-second-spring-of-cleaning.html'&gt;original post&lt;/a&gt;). I have never used this service to read my RSS feeds, prefering to use &lt;a href='https://www.netvibes.com/'&gt;Netvibes&lt;/a&gt;, mainly because it&amp;#8217;s been developed by a French company, but also because I like the UI better.&lt;/p&gt;
+
+&lt;p&gt;But this announce has made me think. Every now and then, we hear about another service being shut down. Google, which regroups a huge part of the webapps used in the world, has his traditionnal Spring Cleaning. Other companies have closed worldwide-used websites. You can never know how long you&amp;#8217;ll be able to use a specific service.&lt;/p&gt;
+
+&lt;p&gt;This is the reason I&amp;#8217;ve decided to develop my own RSS agregator and reader, to allow me to take control over my personnal data.&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;The project is named RSS Reader (not very original). It&amp;#8217;s a PHP based project, that you can deploy on a personnal server, or self-hosting service. It&amp;#8217;s released under the &lt;a href='http://www.opensource.org/licenses/MIT'&gt;MIT License&lt;/a&gt;. It uses 2 external libraries: &lt;a href='http://propelorm.org/'&gt;Propel ORM&lt;/a&gt; (an open source ORM for PHP5, released under the MIT License), and &lt;a href='http://simplepie.org/'&gt;SimplePie&lt;/a&gt; (an open source feed parser, released under the BSD License).&lt;/p&gt;
+
+&lt;p&gt;The installation process is described on the project page &lt;a href='/projects/rss-reader'&gt;here&lt;/a&gt;.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Compress Jekyll website with jekyll-press</title>
@@ -332,13 +348,13 @@ $ vim github-hook.php&lt;/code&gt;&lt;/pre&gt;
 	$flattr = &amp;#39;
 		&amp;lt;span class=&amp;quot;flattr&amp;quot;&amp;gt;
 			&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
-				var flattr_uid = \&amp;#39;&amp;#39; . $uid . &amp;#39;\&amp;#39;;
-				var flattr_url = \&amp;#39;&amp;#39; . get_permalink() . &amp;#39;\&amp;#39;;
-				var flattr_tle = \&amp;#39;&amp;#39; . $tle . &amp;#39;\&amp;#39;;
-				var flattr_dsc = \&amp;#39;&amp;#39; . $dsc . &amp;#39;\&amp;#39;;
-				var flattr_cat = \&amp;#39;&amp;#39; . $cat . &amp;#39;\&amp;#39;;
-				var flattr_tag = \&amp;#39;&amp;#39; . $ftag . &amp;#39;\&amp;#39;;
-				var flattr_btn = \&amp;#39;&amp;#39; . $btn . &amp;#39;\&amp;#39;;
+				var flattr_uid = &amp;quot;&amp;#39;.$uid.&amp;#39;&amp;quot;;
+				var flattr_url = &amp;quot;&amp;#39; . get_permalink() . &amp;#39;&amp;quot;;
+				var flattr_tle = &amp;quot;&amp;#39; . $tle . &amp;#39;&amp;quot;;
+				var flattr_dsc = &amp;quot;&amp;#39; . $dsc . &amp;#39;&amp;quot;;
+				var flattr_cat = &amp;quot;&amp;#39; . $cat . &amp;#39;&amp;quot;;
+				var flattr_tag = &amp;quot;&amp;#39; . $ftag . &amp;#39;&amp;quot;;
+				var flattr_btn = &amp;quot;&amp;#39; . $btn . &amp;#39;&amp;quot;;
 			&amp;lt;/script&amp;gt;
 			&amp;lt;script src=&amp;quot;http://api.flattr.com/button/load.js&amp;quot; type=&amp;quot;text/javascript&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
 		&amp;lt;/span&amp;gt;

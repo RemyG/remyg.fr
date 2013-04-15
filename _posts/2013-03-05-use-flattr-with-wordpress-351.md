@@ -49,13 +49,13 @@ So the final function, as used on my blog, is:
 		$flattr = '
 			<span class="flattr">
 				<script type="text/javascript">
-					var flattr_uid = \'' . $uid . '\';
-					var flattr_url = \'' . get_permalink() . '\';
-					var flattr_tle = \'' . $tle . '\';
-					var flattr_dsc = \'' . $dsc . '\';
-					var flattr_cat = \'' . $cat . '\';
-					var flattr_tag = \'' . $ftag . '\';
-					var flattr_btn = \'' . $btn . '\';
+					var flattr_uid = "'.$uid.'";
+					var flattr_url = "' . get_permalink() . '";
+					var flattr_tle = "' . $tle . '";
+					var flattr_dsc = "' . $dsc . '";
+					var flattr_cat = "' . $cat . '";
+					var flattr_tag = "' . $ftag . '";
+					var flattr_btn = "' . $btn . '";
 				</script>
 				<script src="http://api.flattr.com/button/load.js" type="text/javascript"></script>
 			</span>

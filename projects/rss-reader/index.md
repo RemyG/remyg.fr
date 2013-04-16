@@ -30,18 +30,18 @@ You can find the sources of this project [on GitHub](https://github.com/RemyG/RS
 
 * Clone the main project:
 
-```
-mkdir /var/www/rss-reader
-cd /var/www/rss-reader
-git clone https://github.com/RemyG/RSSReader.git .
-```
+{% highlight bash %}
+$ mkdir /var/www/rss-reader
+$ cd /var/www/rss-reader
+$ git clone https://github.com/RemyG/RSSReader.git .
+{% endhighlight %}
 
 * Fetch the submodules Propel ORM and SimplePie:
 
-```
-git submodule init
-git submodule update
-```
+{% highlight bash %}
+$ git submodule init
+$ git submodule update
+{% endhighlight %}
 
 #### Without git
 

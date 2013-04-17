@@ -101,7 +101,7 @@ $('.main-box').hover(
                 </article>
             {% endfor %}
             <p>
-                <a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">See Archive</a>
+                <a href="{{ site.JB.archive_path }}">See Archive</a>
             </p>
         </section>
     </div>

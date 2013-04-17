@@ -78,5 +78,5 @@ rss: true
 {% endfor %}
 
 <p>
-<a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Posts Archive</a>
+<a href="{{ site.JB.archive_path }}">Posts Archive</a>
 </p>

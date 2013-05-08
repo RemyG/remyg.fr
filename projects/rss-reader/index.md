@@ -51,9 +51,13 @@ $ git submodule update
 
 ### Configuration
 
-* Edit the file `application/config/config.php` and fill in your `BASE_URL`.
-* Edit the file `application/build/conf/rss-reader-conf.php` and update the values of `dns`, `user` and `password` with the connection information for your database.
-* Import the files `application/build/sql/schema.sql` and `application/build/sql/insert.sql` with your MySql browser ([PHPMyAdmin](http://www.phpmyadmin.net), [SQL Buddy](http://sqlbuddy.com/),...).
+* Go to `http://your_url/installation.php` in a browser.
+* Fill the form with the correct infomation:
+	* Site Base URL: the base URL of the application
+	* DB Host: the database host URL
+	* DB Name: the database name
+	* DB Username: the database account username
+	* DB Password: the database account password	
 * Go to `BASE_URL` in a browser, and create the main user as asked.
 * You're good to go!
 
@@ -78,4 +82,14 @@ This project includes 2 external applications / libraries:
 
 ## Changelog
 
-**v0.1** First version of the project
+**v0.2.0**
+
+* jQueryMobile mobile website
+* jQueryUI sortable feeds list
+* preferences saving
+* keyboard navigation
+* old entries clean-up
+
+**v0.1**
+
+* First version of the project

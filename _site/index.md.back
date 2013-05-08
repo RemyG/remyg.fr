@@ -699,6 +699,14 @@ You can find on this website my personal information, where to find me on the in
             
                 <article>
                     <i class="icon-time"> </i>
+                    2013-05-08
+                    <h3>
+                        <a title="Permalink to RSS Reader v.0.2.0" href="/2013/05/08/rss-reader-v-0-2-0/">RSS Reader v.0.2.0</a>
+                    </h3>
+                </article>
+            
+                <article>
+                    <i class="icon-time"> </i>
                     2013-04-15
                     <h3>
                         <a title="Permalink to RSS Reader" href="/2013/04/15/rss-reader-a-self-hosted-rss-agregator-and-reader/">RSS Reader</a>
@@ -726,14 +734,6 @@ You can find on this website my personal information, where to find me on the in
                     2013-03-08
                     <h3>
                         <a title="Permalink to Display GitHub repositories on Jekyll" href="/2013/03/08/display-github-repositories-on-jekyll/">Display GitHub repositories on Jekyll</a>
-                    </h3>
-                </article>
-            
-                <article>
-                    <i class="icon-time"> </i>
-                    2013-03-05
-                    <h3>
-                        <a title="Permalink to Auto-upload Jekyll after pushing to GitHub" href="/2013/03/05/auto-upload-jekyll-after-pushing-to-github/">Auto-upload Jekyll after pushing to GitHub</a>
                     </h3>
                 </article>
             

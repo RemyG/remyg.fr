@@ -5,10 +5,44 @@
         <description>Rémy Gardette - Rémy Gardette</description>
         <link>http://remyg.fr</link>
         <link>http://remyg.fr</link>
-        <lastBuildDate>2013-04-30T10:44:58+01:00</lastBuildDate>
-        <pubDate>2013-04-30T10:44:58+01:00</pubDate>
+        <lastBuildDate>2013-05-08T14:28:22+01:00</lastBuildDate>
+        <pubDate>2013-05-08T14:28:22+01:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>RSS Reader v.0.2.0</title>
+                <description>&lt;p&gt;I&amp;#8217;ve continued working on my new project, &lt;a href='/projects/rss-reader'&gt;RSS Reader&lt;/a&gt;, which is now in &lt;a href='https://github.com/RemyG/RSSReader/commits/v0.2.0'&gt;version 0.2.0&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The new version brings the following changes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;mobile website: I&amp;#8217;ve created a mobile version of the website by using &lt;a href='http://jquerymobile.com'&gt;jQueryMobile&lt;/a&gt;. The mobile version can only be used as read-only (you can&amp;#8217;t add new feeds or make any change on the existing ones).&lt;/li&gt;
+
+&lt;li&gt;sortable feeds list: by using the &lt;a href='http://api.jqueryui.com/sortable/'&gt;sortable widget&lt;/a&gt; from &lt;a href='http://jqueryui.com/'&gt;jQuery UI&lt;/a&gt;, you can now re-order your feeds, drag and drop them to another category&amp;#8230;&lt;/li&gt;
+
+&lt;li&gt;when you decide to read an article as the original webpage in an iframe, or as the feed content, your choice is saved for the next times you open this feed.&lt;/li&gt;
+
+&lt;li&gt;you can now navigate through entries with your keyboard (&amp;#8221;N&amp;#8221; for the next entry, &amp;#8220;P&amp;#8221; for the previous one).&lt;/li&gt;
+
+&lt;li&gt;the application cleans old entries: each time the feeds are updated, it deletes old entries from the database: a maximum of 300 entries / 100 read entries is kept for each feed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The next functionalities I&amp;#8217;d like to implement are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;list the entries from a whole category&lt;/li&gt;
+
+&lt;li&gt;more functionalities on the mobile website (mark as read, unread&amp;#8230;)&lt;/li&gt;
+
+&lt;li&gt;edit an existing feed (change the feed link, the name&amp;#8230;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Don&amp;#8217;t hesitate to download, test, fork, and comment on &lt;a href='https://github.com/RemyG/RSSReader'&gt;this project&lt;/a&gt;, which is released under the &lt;a href='http://opensource.org/licenses/MIT'&gt;MIT License&lt;/a&gt;.&lt;/p&gt;</description>
+                <link>http://remyg.fr/2013/05/08/rss-reader-v-0-2-0</link>
+                <guid>http://remyg.fr/2013/05/08/rss-reader-v-0-2-0</guid>
+                <pubDate>2013-05-08T18:00:00+01:00</pubDate>
+        </item>
 
         <item>
                 <title>RSS Reader</title>

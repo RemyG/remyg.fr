@@ -24,6 +24,7 @@ http://remyg.fr/rss.xml
 http://remyg.fr/tags.html
 http://remyg.fr/pages.html
 
+http://remyg.fr/2013/05/08/rss-reader-v-0-2-0
 http://remyg.fr/2013/04/15/rss-reader-a-self-hosted-rss-agregator-and-reader
 http://remyg.fr/2013/03/13/compress-jekyll-website-with-jekyll-press
 http://remyg.fr/2013/03/09/install-jekyll-on-ubuntu

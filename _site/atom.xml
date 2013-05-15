@@ -4,13 +4,69 @@
  <title>Rémy Gardette</title>
  <link href="http://remyg.fr/" rel="self"/>
  <link href="http://remyg.fr"/>
- <updated>2013-05-08T14:28:22+01:00</updated>
+ <updated>2013-05-15T10:17:33+01:00</updated>
  <id>http://remyg.fr</id>
  <author>
    <name>Rémy Gardette</name>
    <email>remy.gardette@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Update Jekyll to version 1.0.2</title>
+   <link href="http://remyg.fr/2013/05/14/update-jekyll-to-version-1-0-2"/>
+   <updated>2013-05-14T18:00:00+01:00</updated>
+   <id>http://remyg.fr/2013/05/14/update-jekyll-to-version-1-0-2</id>
+   <content type="html">&lt;p&gt;Today, I&amp;#8217;ve updated my version of Jekyll from 0.12.1 to 1.0.2. I&amp;#8217;ll detail the procedure I followed to do it. Most of the commands have to be ran as root.&lt;/p&gt;
+
+&lt;h2 id='clean_the_project'&gt;Clean the project&lt;/h2&gt;
+
+&lt;p&gt;You will need to start by deleting the &lt;code&gt;Gemfile.lock&lt;/code&gt; file, so it can be re-generated with the correct version numbers.&lt;/p&gt;
+
+&lt;h2 id='update_the_jekyll_gem'&gt;Update the Jekyll gem&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ gem update jekyll&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- more --&gt;
+&lt;h2 id='update_the_kramdown_gem'&gt;Update the Kramdown gem&lt;/h2&gt;
+
+&lt;p&gt;If you&amp;#8217;re using Kramdown as your markdown parser, you&amp;#8217;ll need to update it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ gem update kramdown&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id='disable_jekyllpress'&gt;Disable jekyll-press&lt;/h2&gt;
+
+&lt;p&gt;If you&amp;#8217;re using jekyll-press to compress the generated output files, this plugin doesn&amp;#8217;t seem to be compatible with Uglifier 2.0.1 (one of the gems used by it). When I tried to run a local instance of Jekyll, I got this error:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;error: Invalid option: inline_script&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So you&amp;#8217;re going to have to disable it for now (I haven&amp;#8217;t found a solution yet). Edit your &lt;code&gt;Gemfile&lt;/code&gt; and remove (or comment) the line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gem &amp;#39;jekyll-press&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id='retrieve_all_the_gem_dependencies'&gt;Retrieve all the gem dependencies&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ bundle&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id='remove_the_automatic_regeneration_parameter'&gt;Remove the automatic re-generation parameter&lt;/h2&gt;
+
+&lt;p&gt;In your &lt;code&gt;_config.yml&lt;/code&gt; file, remove (or comment) the line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;auto=&amp;quot;true&amp;quot; # or &amp;quot;false&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id='run_jekyll'&gt;Run Jekyll&lt;/h2&gt;
+
+&lt;p&gt;Now you should be able to run Jekyll. To launch a local instance, use:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ jekyll serve&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;instead of:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ jekyll --server&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To run it with auto-regeneration, run:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ jekyll serve --watch&lt;/code&gt;&lt;/pre&gt;</content>
+ </entry>
  
  <entry>
    <title>RSS Reader v.0.2.0</title>

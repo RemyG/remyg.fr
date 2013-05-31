@@ -5,8 +5,8 @@
         <description>Rémy Gardette - Rémy Gardette</description>
         <link>http://remyg.fr</link>
         <link>http://remyg.fr</link>
-        <lastBuildDate>2013-05-15T10:17:33+01:00</lastBuildDate>
-        <pubDate>2013-05-15T10:17:33+01:00</pubDate>
+        <lastBuildDate>2013-05-31T16:29:33+01:00</lastBuildDate>
+        <pubDate>2013-05-31T16:29:33+01:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -106,13 +106,13 @@
 
 &lt;p&gt;But this announce has made me think. Every now and then, we hear about another service being shut down. Google, which regroups a huge part of the webapps used in the world, has his traditionnal Spring Cleaning. Other companies have closed worldwide-used websites. You can never know how long you&amp;#8217;ll be able to use a specific service.&lt;/p&gt;
 
-&lt;p&gt;This is the reason I&amp;#8217;ve decided to develop my own RSS agregator and reader, to allow me to take control over my personnal data.&lt;/p&gt;
+&lt;p&gt;This is the reason I&amp;#8217;ve decided to develop my own RSS aggregator and reader, to allow me to take control over my personnal data.&lt;/p&gt;
 &lt;!-- more --&gt;
 &lt;p&gt;The project is named RSS Reader (not very original). It&amp;#8217;s a PHP based project, that you can deploy on a personnal server, or self-hosting service. It&amp;#8217;s released under the &lt;a href='http://www.opensource.org/licenses/MIT'&gt;MIT License&lt;/a&gt;. It uses 2 external libraries: &lt;a href='http://propelorm.org/'&gt;Propel ORM&lt;/a&gt; (an open source ORM for PHP5, released under the MIT License), and &lt;a href='http://simplepie.org/'&gt;SimplePie&lt;/a&gt; (an open source feed parser, released under the BSD License).&lt;/p&gt;
 
 &lt;p&gt;The installation process is described on the project page &lt;a href='/projects/rss-reader'&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
-                <link>http://remyg.fr/2013/04/15/rss-reader-a-self-hosted-rss-agregator-and-reader</link>
-                <guid>http://remyg.fr/2013/04/15/rss-reader-a-self-hosted-rss-agregator-and-reader</guid>
+                <link>http://remyg.fr/2013/04/15/rss-reader-a-self-hosted-rss-aggregator-and-reader</link>
+                <guid>http://remyg.fr/2013/04/15/rss-reader-a-self-hosted-rss-aggregator-and-reader</guid>
                 <pubDate>2013-04-15T00:00:00+01:00</pubDate>
         </item>
 

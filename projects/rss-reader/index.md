@@ -11,7 +11,7 @@ description: ""
     <div><a href="https://github.com/RemyG/RSSReader">View On <strong>GitHub</strong></a></div>
 </header>
 
-This project is a self-hosted RSS agregator and reader.
+This project is a self-hosted RSS aggregator and reader.
 
 You can find the sources of this project [on GitHub](https://github.com/RemyG/RSSReader) (you can also directly download [the Zip archive](https://github.com/RemyG/RSSReader/archive/master.zip)).
 

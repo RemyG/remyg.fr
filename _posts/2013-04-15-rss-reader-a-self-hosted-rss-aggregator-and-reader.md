@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "RSS Reader"
-tagline: "A self-hosted RSS agregator and reader"
+tagline: "A self-hosted RSS aggregator and reader"
 description: ""
 tags: [PHP] 
 categories: [Dev]
@@ -12,7 +12,7 @@ A few weeks ago, Google announced they would stop their service [Google Reader](
 
 But this announce has made me think. Every now and then, we hear about another service being shut down. Google, which regroups a huge part of the webapps used in the world, has his traditionnal Spring Cleaning. Other companies have closed worldwide-used websites. You can never know how long you'll be able to use a specific service.
 
-This is the reason I've decided to develop my own RSS agregator and reader, to allow me to take control over my personnal data.
+This is the reason I've decided to develop my own RSS aggregator and reader, to allow me to take control over my personnal data.
 
 <!-- more -->
 
